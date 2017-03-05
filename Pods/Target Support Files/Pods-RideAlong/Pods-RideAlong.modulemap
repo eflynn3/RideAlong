@@ -1,0 +1,6 @@
+framework module Pods_RideAlong {
+  umbrella header "Pods-RideAlong-umbrella.h"
+
+  export *
+  module * { export * }
+}
