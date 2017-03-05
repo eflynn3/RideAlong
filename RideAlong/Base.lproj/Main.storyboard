@@ -8,7 +8,7 @@
         <!--Login Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Login Page" customClass="ViewController" customModule="RideAlong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Login Page" customClass="LoginPageViewController" customModule="RideAlong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DY5-Nk-77g">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DY5-Nk-77g">
                                 <rect key="frame" x="20" y="216" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -32,20 +32,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="bQm-bA-8af" kind="show" identifier="loginToNewsFeedSegue" id="7Cp-mo-uxk"/>
+                                    <action selector="handleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YmH-WU-1qi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfR-ze-owF">
                                 <rect key="frame" x="52" y="602" width="270" height="30"/>
                                 <state key="normal" title="Not registered? Create an account here"/>
                                 <connections>
-                                    <segue destination="aLU-rW-iUl" kind="show" identifier="resigterSegue" id="GCe-LZ-0y1"/>
+                                    <segue destination="aLU-rW-iUl" kind="show" identifier="resisterSegue" id="rSo-LU-CeP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailField" destination="DY5-Nk-77g" id="syd-48-IMR"/>
+                        <outlet property="passwordField" destination="FjK-zD-DQ0" id="4I3-Ph-mmK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,7 +58,7 @@
         <!--Register Page-->
         <scene sceneID="Umh-Kl-tng">
             <objects>
-                <viewController id="aLU-rW-iUl" userLabel="Register Page" sceneMemberID="viewController">
+                <viewController id="aLU-rW-iUl" userLabel="Register Page" customClass="RegisterViewController" customModule="RideAlong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fa0-BK-uh8"/>
                         <viewControllerLayoutGuide type="bottom" id="i4d-yR-GJ4"/>
@@ -64,10 +68,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3x-hX-QKC">
-                                <rect key="frame" x="119" y="542" width="124" height="30"/>
+                                <rect key="frame" x="199" y="542" width="124" height="30"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="CKT-61-9pt" kind="show" identifier="profileSegue" id="T4O-pp-XgU"/>
+                                    <action selector="handleContinue:" destination="aLU-rW-iUl" eventType="touchUpInside" id="0F4-WM-GlW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="testContinueSegue" id="hgH-bD-qpf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to RideAlong!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3D-3r-m3h">
@@ -96,6 +101,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9Q-oJ-rIY">
+                                <rect key="frame" x="64" y="542" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="handleCancel:" destination="aLU-rW-iUl" eventType="touchUpInside" id="eQ8-mi-xXG"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="backToLoginSegue" id="Duc-SZ-bSV"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-HI-rmD">
                                 <rect key="frame" x="16" y="119" width="344" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -105,6 +118,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="confirmPasswordField" destination="oax-Hd-fva" id="MlY-LO-bCZ"/>
+                        <outlet property="emailField" destination="1FY-Y4-Hgi" id="5M6-FU-bCA"/>
+                        <outlet property="passwordField" destination="xPQ-g1-8QY" id="RYU-VQ-0Pt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Qn-VI-hJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -287,6 +305,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7Cp-mo-uxk"/>
+        <segue reference="hgH-bD-qpf"/>
     </inferredMetricsTieBreakers>
 </document>
