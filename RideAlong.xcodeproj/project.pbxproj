@@ -11,16 +11,15 @@
 		67D5DB512B02ED6D574AFC6C /* Pods_RideAlong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EFA4C8673C16ABD9D52AFA /* Pods_RideAlong.framework */; };
 		8AA22C8E00DD192DDDF1B9A7 /* Pods_RideAlong_RideAlongUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE3939966C21FA0C46F439E /* Pods_RideAlong_RideAlongUITests.framework */; };
 		A503C69F1E4A2C4900EE2E35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A503C69E1E4A2C4900EE2E35 /* AppDelegate.swift */; };
-		A503C6A41E4A2C4900EE2E35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A503C6A21E4A2C4900EE2E35 /* Main.storyboard */; };
 		A503C6A61E4A2C4900EE2E35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A503C6A51E4A2C4900EE2E35 /* Assets.xcassets */; };
 		A503C6A91E4A2C4900EE2E35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A503C6A71E4A2C4900EE2E35 /* LaunchScreen.storyboard */; };
 		A503C6B41E4A2C4900EE2E35 /* RideAlongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A503C6B31E4A2C4900EE2E35 /* RideAlongTests.swift */; };
 		A503C6BF1E4A2C4900EE2E35 /* RideAlongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A503C6BE1E4A2C4900EE2E35 /* RideAlongUITests.swift */; };
 		A566F0F91E6BE02900EE4262 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566F0F81E6BE02900EE4262 /* RegisterViewController.swift */; };
 		A566F0FC1E6BE39100EE4262 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */; };
-		A5D8E26D1E6B8DAF00EC1956 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5D8E26C1E6B8DAF00EC1956 /* GoogleService-Info.plist */; };
-		A5D8E26E1E6B8DAF00EC1956 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5D8E26C1E6B8DAF00EC1956 /* GoogleService-Info.plist */; };
-		A5D8E26F1E6B8DAF00EC1956 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5D8E26C1E6B8DAF00EC1956 /* GoogleService-Info.plist */; };
+		A5C292C11E8AF5950093995D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5C292C01E8AF5950093995D /* GoogleService-Info.plist */; };
+		A5C292C31E8AFD1E0093995D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C292C21E8AFD1E0093995D /* ProfileViewController.swift */; };
+		A5C292C61E8B00B80093995D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C292C41E8B00B80093995D /* Main.storyboard */; };
 		D552B9653AFFDCB4F9AE9089 /* Pods_RideAlong_RideAlongTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631F7608E20ACA38B84EDF41 /* Pods_RideAlong_RideAlongTests.framework */; };
 		E0B91602B8093F67A8070F19 /* Pods_RideAlongTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4748D3668994225573D04425 /* Pods_RideAlongTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,7 +57,6 @@
 		9DE3939966C21FA0C46F439E /* Pods_RideAlong_RideAlongUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideAlong_RideAlongUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A503C69B1E4A2C4900EE2E35 /* RideAlong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideAlong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A503C69E1E4A2C4900EE2E35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A503C6A31E4A2C4900EE2E35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A503C6A51E4A2C4900EE2E35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A503C6A81E4A2C4900EE2E35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A503C6AA1E4A2C4900EE2E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,7 +69,9 @@
 		A566F0F81E6BE02900EE4262 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A566F0FA1E6BE32B00EE4262 /* RideAlong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RideAlong.entitlements; sourceTree = "<group>"; };
 		A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
-		A5D8E26C1E6B8DAF00EC1956 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5C292C01E8AF5950093995D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5C292C21E8AFD1E0093995D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A5C292C51E8B00B80093995D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFA4671BB2856AEEC49D7840 /* Pods-RideAlongUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlongUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlongUITests/Pods-RideAlongUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD25805E1587D34F87C668E6 /* Pods-RideAlongUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlongUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlongUITests/Pods-RideAlongUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,13 +162,14 @@
 			children = (
 				A566F0FA1E6BE32B00EE4262 /* RideAlong.entitlements */,
 				A503C69E1E4A2C4900EE2E35 /* AppDelegate.swift */,
-				A503C6A21E4A2C4900EE2E35 /* Main.storyboard */,
 				A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */,
+				A5C292C41E8B00B80093995D /* Main.storyboard */,
 				A503C6A51E4A2C4900EE2E35 /* Assets.xcassets */,
 				A503C6A71E4A2C4900EE2E35 /* LaunchScreen.storyboard */,
-				A5D8E26C1E6B8DAF00EC1956 /* GoogleService-Info.plist */,
+				A5C292C01E8AF5950093995D /* GoogleService-Info.plist */,
 				A503C6AA1E4A2C4900EE2E35 /* Info.plist */,
 				A566F0F81E6BE02900EE4262 /* RegisterViewController.swift */,
+				A5C292C21E8AFD1E0093995D /* ProfileViewController.swift */,
 			);
 			path = RideAlong;
 			sourceTree = "<group>";
@@ -312,9 +313,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A503C6A91E4A2C4900EE2E35 /* LaunchScreen.storyboard in Resources */,
-				A5D8E26D1E6B8DAF00EC1956 /* GoogleService-Info.plist in Resources */,
+				A5C292C11E8AF5950093995D /* GoogleService-Info.plist in Resources */,
 				A503C6A61E4A2C4900EE2E35 /* Assets.xcassets in Resources */,
-				A503C6A41E4A2C4900EE2E35 /* Main.storyboard in Resources */,
+				A5C292C61E8B00B80093995D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +323,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5D8E26E1E6B8DAF00EC1956 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +330,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5D8E26F1E6B8DAF00EC1956 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +480,7 @@
 			files = (
 				A566F0FC1E6BE39100EE4262 /* LoginPageViewController.swift in Sources */,
 				A503C69F1E4A2C4900EE2E35 /* AppDelegate.swift in Sources */,
+				A5C292C31E8AFD1E0093995D /* ProfileViewController.swift in Sources */,
 				A566F0F91E6BE02900EE4262 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,20 +517,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A503C6A21E4A2C4900EE2E35 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A503C6A31E4A2C4900EE2E35 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A503C6A71E4A2C4900EE2E35 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A503C6A81E4A2C4900EE2E35 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A5C292C41E8B00B80093995D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5C292C51E8B00B80093995D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -728,6 +728,7 @@
 			baseConfigurationReference = 65348C1971EAF5AA12535661 /* Pods-RideAlongTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RideAlongTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Erin.RideAlongTests;
@@ -741,6 +742,7 @@
 			baseConfigurationReference = 18595E7741E714AE85D24394 /* Pods-RideAlongTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RideAlongTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Erin.RideAlongTests;

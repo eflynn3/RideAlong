@@ -22,7 +22,7 @@ class LoginPageViewController: UIViewController {
         if (email != "" && password != ""){
             FIRAuth.auth()?.signInWithEmail(email, password: password, completion: { (user, error ) in
                 if error == nil {
-                    self.performSegueWithIdentifier("LoginToNewsFeedSegue", sender: nil)
+                    self.performSegueWithIdentifier("createProfileSegue", sender: nil)
                 }
                 else {
                     print(error)
