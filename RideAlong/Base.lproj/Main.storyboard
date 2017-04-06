@@ -8,7 +8,7 @@
         <!--Login Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Login Page" customClass="LoginPageViewController" customModule="RideAlong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" userLabel="Login Page" customClass="LoginPageViewController" customModule="RideAlong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,32 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DY5-Nk-77g">
-                                <rect key="frame" x="20" y="216" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qyh-Fp-fw0" customClass="createProfileSegue">
                                 <rect key="frame" x="59" y="310" width="257" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="handleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YmH-WU-1qi"/>
-                                    <segue destination="D30-4r-1BW" kind="show" identifier="createProfileSegue" id="tje-2v-P3T"/>
+                                    <segue destination="kq5-Nb-cQf" kind="show" identifier="viewProfile" id="Pc1-Ts-TxI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfR-ze-owF">
-                                <rect key="frame" x="52" y="602" width="270" height="30"/>
-                                <state key="normal" title="Not registered? Create an account here"/>
-                                <connections>
-                                    <segue destination="aLU-rW-iUl" kind="show" identifier="resisterSegue" id="rSo-LU-CeP"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FjK-zD-DQ0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FjK-zD-DQ0">
                                 <rect key="frame" x="20" y="266" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DY5-Nk-77g">
+                                <rect key="frame" x="20" y="216" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfR-ze-owF">
+                                <rect key="frame" x="159" y="352" width="57" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <segue destination="aLU-rW-iUl" kind="show" identifier="resisterSegue" id="rSo-LU-CeP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -74,22 +74,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SqI-ED-ymz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SqI-ED-ymz">
                                 <rect key="frame" x="16" y="209" width="344" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ND Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1FY-Y4-Hgi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ND Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1FY-Y4-Hgi">
                                 <rect key="frame" x="15" y="291" width="344" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xPQ-g1-8QY">
-                                <rect key="frame" x="16" y="372" width="344" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Confirm Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oax-Hd-fva">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oax-Hd-fva">
                                 <rect key="frame" x="15" y="458" width="344" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -102,7 +97,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="backToLoginSegue" id="Duc-SZ-bSV"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-HI-rmD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-HI-rmD">
                                 <rect key="frame" x="16" y="119" width="344" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -112,8 +107,14 @@
                                 <state key="normal" title="Continue"/>
                                 <connections>
                                     <action selector="handleContinue:" destination="aLU-rW-iUl" eventType="touchUpInside" id="0F4-WM-GlW"/>
+                                    <segue destination="D30-4r-1BW" kind="show" identifier="setUpProfile" id="ZQa-zL-L1i"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xPQ-g1-8QY">
+                                <rect key="frame" x="16" y="372" width="344" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -121,6 +122,8 @@
                     <connections>
                         <outlet property="confirmPasswordField" destination="oax-Hd-fva" id="MlY-LO-bCZ"/>
                         <outlet property="emailField" destination="1FY-Y4-Hgi" id="5M6-FU-bCA"/>
+                        <outlet property="firstName" destination="GJO-HI-rmD" id="CcY-nR-fZw"/>
+                        <outlet property="lastName" destination="SqI-ED-ymz" id="73w-Hz-OIp"/>
                         <outlet property="passwordField" destination="xPQ-g1-8QY" id="RYU-VQ-0Pt"/>
                     </connections>
                 </viewController>
@@ -140,23 +143,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Class Year" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjo-l1-pG3">
-                                <rect key="frame" x="59" y="120" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qpd-fi-VCo">
+                                <rect key="frame" x="67" y="314" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Gender" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qpd-fi-VCo">
-                                <rect key="frame" x="59" y="186" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Car?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jgt-AP-FbE">
+                                <rect key="frame" x="67" y="368" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Car?" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jgt-AP-FbE">
-                                <rect key="frame" x="59" y="259" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Seats?" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gll-p6-VJP">
-                                <rect key="frame" x="59" y="319" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seats?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gll-p6-VJP">
+                                <rect key="frame" x="67" y="419" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -167,11 +165,34 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wo2-CK-Rpb">
-                                <rect key="frame" x="132" y="512" width="111" height="30"/>
-                                <state key="normal" title="Set Up Payment"/>
+                                <rect key="frame" x="127" y="512" width="122" height="30"/>
+                                <state key="normal" title="Finish Registering"/>
                                 <connections>
                                     <action selector="confirmButton:" destination="D30-4r-1BW" eventType="touchUpInside" id="J7R-jV-RKi"/>
-                                    <segue destination="L6f-85-AFf" kind="show" identifier="setUpPaymentSegue" id="huq-q5-LOA"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="backToLogin" id="0l6-av-m3F"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlR-PO-6ey">
+                                <rect key="frame" x="112" y="67" width="150" height="150"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjo-l1-pG3">
+                                <rect key="frame" x="67" y="253" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIX-OJ-0Ho">
+                                <rect key="frame" x="134" y="225" width="105" height="30"/>
+                                <state key="normal" title="Choose Picture"/>
+                                <connections>
+                                    <action selector="pickImage:" destination="D30-4r-1BW" eventType="touchUpInside" id="NQg-Hk-bgz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEn-R2-cDI">
+                                <rect key="frame" x="132" y="558" width="111" height="30"/>
+                                <state key="normal" title="Set Up Payment"/>
+                                <connections>
+                                    <action selector="confirmButton:" destination="D30-4r-1BW" eventType="touchUpInside" id="NnS-nF-xbF"/>
+                                    <segue destination="L6f-85-AFf" kind="show" identifier="setUpPayment" id="LTi-6m-uji"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -182,6 +203,7 @@
                         <outlet property="carText" destination="Jgt-AP-FbE" id="80m-gs-por"/>
                         <outlet property="classYearText" destination="tjo-l1-pG3" id="YnL-zm-Etx"/>
                         <outlet property="genderText" destination="qpd-fi-VCo" id="lkg-QW-oVz"/>
+                        <outlet property="profilePic" destination="mlR-PO-6ey" id="Z1Q-48-zN2"/>
                         <outlet property="seatsText" destination="gll-p6-VJP" id="fl9-WW-Adl"/>
                     </connections>
                 </viewController>
@@ -346,5 +368,42 @@
             </objects>
             <point key="canvasLocation" x="1256.5" y="112.5"/>
         </scene>
+        <!--CreateProfile-->
+        <scene sceneID="v60-Np-JMv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A6o-UD-HNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="CreateProfile" id="kq5-Nb-cQf" customClass="CurrentProfileViewController" customModule="RideAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GoT-nN-LlC"/>
+                        <viewControllerLayoutGuide type="bottom" id="1ET-af-mph"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B81-EG-olQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g6T-Ha-9c9">
+                                <rect key="frame" x="112" y="28" width="150" height="150"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDn-zy-fHX">
+                                <rect key="frame" x="0.0" y="203" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="SDn-zy-fHX" id="agz-gV-6gW"/>
+                        <outlet property="profilePic" destination="g6T-Ha-9c9" id="zio-0w-3fX"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-54.5" y="-683.5"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0l6-av-m3F"/>
+    </inferredMetricsTieBreakers>
 </document>
