@@ -14,9 +14,14 @@ class CurrentProfileViewController: UIViewController {
     let databaseRef = FIRDatabase.database().reference()
     let storageRef = FIRStorage.storage().reference()
     
+    @IBAction func newsFeed(sender: AnyObject) {
+        self.performSegueWithIdentifier("goToNewsFeed", sender: nil)
+    }
+    
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var infoLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,9 +53,12 @@ class CurrentProfileViewController: UIViewController {
         let uid = FIRAuth.auth()?.currentUser?.uid
         databaseRef.child("users").child(uid!).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
             if let dict = snapshot.value as? [String: AnyObject]{
-                let first = dict["first-name"] as! String
-                let last = dict["last-name"] as! String
-                self.nameLabel.text! = first + " " + last
+                let first = dict["first-name"]?.uppercaseString
+                let last = dict["last-name"]?.uppercaseString
+                self.nameLabel.text! = first! + " " + last!
+                let classYear = dict["class"]?.uppercaseString
+                let gender = dict["gender"]?.uppercaseString
+                self.infoLabel.text! = classYear! + " | " + gender!
                 if let profileImageURL = dict["pic"] as? String{
                     let url = NSURL(string: profileImageURL)
                     NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, response, error) in
