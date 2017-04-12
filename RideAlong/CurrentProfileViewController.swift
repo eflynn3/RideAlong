@@ -50,8 +50,8 @@ class CurrentProfileViewController: UIViewController {
     func setUpProfile() {
         profilePic.layer.cornerRadius = self.profilePic.frame.size.width/2
         profilePic.clipsToBounds = true
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        databaseRef.child("users").child(uid!).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
+        let uid = FIRAuth.auth()?.currentUser?.uid ?? "nil"
+        databaseRef.child("users").child(uid).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
             if let dict = snapshot.value as? [String: AnyObject]{
                 let first = dict["first-name"]?.uppercaseString
                 let last = dict["last-name"]?.uppercaseString

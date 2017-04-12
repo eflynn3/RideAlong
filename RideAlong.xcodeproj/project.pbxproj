@@ -748,6 +748,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RideAlongTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Erin.RideAlongTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -762,6 +763,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RideAlongTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Erin.RideAlongTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -774,6 +776,7 @@
 			baseConfigurationReference = DD25805E1587D34F87C668E6 /* Pods-RideAlongUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RideAlongUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Erin.RideAlongUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -786,6 +789,7 @@
 			baseConfigurationReference = BFA4671BB2856AEEC49D7840 /* Pods-RideAlongUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RideAlongUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Erin.RideAlongUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
