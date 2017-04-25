@@ -1,0 +1,59 @@
+//
+//  NewsFeedTableCell.swift
+//  RideAlong
+//
+//  Created by Erin Flynn on 4/23/17.
+//
+//
+
+import UIKit
+
+class NewsFeedTableCell: UITableViewCell {
+
+    @IBOutlet weak var postText: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameText: UILabel!
+    @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var backgroundCardView: UIView!
+    @IBOutlet weak var datePosted: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var interestedButton: UIButton!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    
+    func createCell() {
+        contentView.backgroundColor = UIColor(colorLiteralRed: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
+        backgroundCardView.backgroundColor = UIColor.whiteColor()
+        
+        backgroundCardView.layer.cornerRadius = 3.0
+        backgroundCardView.layer.masksToBounds = false
+        
+        backgroundCardView.layer.shadowColor = UIColor.blackColor().colorWithAlphaComponent(0.2).CGColor
+        backgroundCardView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        backgroundCardView.layer.shadowOpacity = 0.8
+        
+        nameText.text = "Erin"
+        postText.text = "Going to Target In Mishawaka"
+        profileImage.image = UIImage(named: "erin")
+        date.text = "Monday, April 23rd"
+        time.text = "2:00 pm"
+        datePosted.text = "23 mins ago"
+        
+        chatButton.layer.cornerRadius = 2
+        chatButton.layer.borderWidth = 1
+        
+        commentButton.layer.cornerRadius = 2
+        commentButton.layer.borderWidth = 1
+        
+        interestedButton.layer.cornerRadius = 2
+        interestedButton.layer.borderWidth = 1
+        
+    }
+}
