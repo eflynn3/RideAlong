@@ -29,8 +29,8 @@ class NewsFeedTableCell: UITableViewCell {
 
     
     func createCell() {
-        contentView.backgroundColor = UIColor(colorLiteralRed: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
-        backgroundCardView.backgroundColor = UIColor.whiteColor()
+        backgroundCardView.backgroundColor = UIColor(colorLiteralRed: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
+        contentView.backgroundColor = UIColor(colorLiteralRed:0.047, green:0.616, blue:0.616, alpha:1.0)
         
         backgroundCardView.layer.cornerRadius = 3.0
         backgroundCardView.layer.masksToBounds = false
