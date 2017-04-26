@@ -15,6 +15,9 @@
 		A503C6A91E4A2C4900EE2E35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A503C6A71E4A2C4900EE2E35 /* LaunchScreen.storyboard */; };
 		A503C6B41E4A2C4900EE2E35 /* RideAlongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A503C6B31E4A2C4900EE2E35 /* RideAlongTests.swift */; };
 		A503C6BF1E4A2C4900EE2E35 /* RideAlongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A503C6BE1E4A2C4900EE2E35 /* RideAlongUITests.swift */; };
+		A54B3A8C1EAFEA0800ED47D0 /* CreateChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B3A8B1EAFEA0800ED47D0 /* CreateChatCell.swift */; };
+		A54B3A8E1EAFEA8800ED47D0 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B3A8D1EAFEA8800ED47D0 /* ChatListViewController.swift */; };
+		A54B3A901EAFEAB300ED47D0 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B3A8F1EAFEAB300ED47D0 /* Chat.swift */; };
 		A566F0F91E6BE02900EE4262 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566F0F81E6BE02900EE4262 /* RegisterViewController.swift */; };
 		A566F0FC1E6BE39100EE4262 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */; };
 		A57A1AC11E96EF640030BB07 /* CurrentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A1AC01E96EF640030BB07 /* CurrentProfileViewController.swift */; };
@@ -70,6 +73,9 @@
 		A503C6BA1E4A2C4900EE2E35 /* RideAlongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideAlongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A503C6BE1E4A2C4900EE2E35 /* RideAlongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAlongUITests.swift; sourceTree = "<group>"; };
 		A503C6C01E4A2C4900EE2E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A54B3A8B1EAFEA0800ED47D0 /* CreateChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChatCell.swift; sourceTree = "<group>"; };
+		A54B3A8D1EAFEA8800ED47D0 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		A54B3A8F1EAFEAB300ED47D0 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		A566F0F81E6BE02900EE4262 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A566F0FA1E6BE32B00EE4262 /* RideAlong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RideAlong.entitlements; sourceTree = "<group>"; };
 		A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +179,8 @@
 				A503C69E1E4A2C4900EE2E35 /* AppDelegate.swift */,
 				A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */,
 				A5C292C41E8B00B80093995D /* Main.storyboard */,
+				A54B3A8B1EAFEA0800ED47D0 /* CreateChatCell.swift */,
+				A54B3A8D1EAFEA8800ED47D0 /* ChatListViewController.swift */,
 				A5B55A831EAD43BC00D658EE /* NewsFeedTableCell.swift */,
 				A5B55A7D1EAD2F2400D658EE /* NewsFeedViewController.swift */,
 				A503C6A51E4A2C4900EE2E35 /* Assets.xcassets */,
@@ -208,6 +216,7 @@
 		A5B4A2351E970C2B003AAD2A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A54B3A8F1EAFEAB300ED47D0 /* Chat.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -502,10 +511,13 @@
 				A57A1AC11E96EF640030BB07 /* CurrentProfileViewController.swift in Sources */,
 				A503C69F1E4A2C4900EE2E35 /* AppDelegate.swift in Sources */,
 				A5B55A841EAD43BC00D658EE /* NewsFeedTableCell.swift in Sources */,
+				A54B3A8E1EAFEA8800ED47D0 /* ChatListViewController.swift in Sources */,
 				A5B4A2341E970B2F003AAD2A /* OfferRideViewController.swift in Sources */,
+				A54B3A901EAFEAB300ED47D0 /* Chat.swift in Sources */,
 				A5C292C31E8AFD1E0093995D /* ProfileViewController.swift in Sources */,
 				A566F0F91E6BE02900EE4262 /* RegisterViewController.swift in Sources */,
 				A5B55A7E1EAD2F2400D658EE /* NewsFeedViewController.swift in Sources */,
+				A54B3A8C1EAFEA0800ED47D0 /* CreateChatCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
