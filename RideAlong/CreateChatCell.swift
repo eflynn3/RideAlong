@@ -15,12 +15,8 @@ import UIKit
 
 class CreateChatCell: UITableViewCell {
     
-    
-    
-    @IBOutlet weak var newChatNameField: UITextField!
-    
-    @IBOutlet weak var createChatButton: UIButton!
-    
-    
+    @IBOutlet weak var toChatName: UILabel!
+    @IBOutlet weak var toChatProfileImage: UIImageView!
+
     
 }

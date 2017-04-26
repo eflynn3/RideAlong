@@ -8,6 +8,7 @@ target 'RideAlong' do
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'JSQMessagesViewController'
 
   target 'RideAlongTests' do
     inherit! :search_paths

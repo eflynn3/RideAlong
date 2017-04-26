@@ -597,22 +597,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="351" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="v4e-M1-xOK">
-                                                    <rect key="frame" x="36" y="7" width="97" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ceF-jd-87g">
+                                                    <rect key="frame" x="79" y="11" width="247" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tZK-gU-T5v">
-                                                    <rect key="frame" x="178" y="8" width="46" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Qpz-8X-v5y">
+                                                    <rect key="frame" x="21" y="2" width="44" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="createChatButton" destination="tZK-gU-T5v" id="XIb-5z-nzR"/>
-                                            <outlet property="newChatNameField" destination="v4e-M1-xOK" id="mR2-lw-P17"/>
+                                            <outlet property="toChatName" destination="ceF-jd-87g" id="lBU-tX-GFE"/>
+                                            <outlet property="toChatProfileImage" destination="Qpz-8X-v5y" id="q7f-HT-Kot"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -626,9 +626,27 @@
                     </view>
                     <navigationItem key="navigationItem" id="VcF-J8-ZBA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="1C7-OJ-tkd" kind="modal" identifier="toSpecificChat" id="OYf-ew-sUt"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="601.5" y="-720.5"/>
+        </scene>
+        <!--Live Chat View Controller-->
+        <scene sceneID="DRK-4s-lFL">
+            <objects>
+                <viewController id="1C7-OJ-tkd" customClass="LiveChatViewController" customModule="RideAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jrE-Sa-yqw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gys-Se-xkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128.5" y="-920.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PhO-La-gRi">

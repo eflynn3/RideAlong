@@ -7,45 +7,54 @@
 //
 
 import UIKit
-
 import Firebase
-
-
-
-enum Section: Int {
-    
-    case createNewChatSection = 0
-    
-    case currentChatsSection
-    
-}
-
 
 
 class ChatListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        
         
         // Do any additional setup after loading the view.
         
     }
     
-    
-    
     override func didReceiveMemoryWarning() {
-        
         super.didReceiveMemoryWarning()
         
         // Dispose of any resources that can be recreated.
         
     }
-    
-    
+
+    //WE NEED THIS FUNCTION WHEN WE HAVE CHATS IN THE DATABASE
+    /*func getCurrentUserInfo() {
+        profilePic.layer.cornerRadius = self.profilePic.frame.size.width/2
+        profilePic.clipsToBounds = true
+        let uid = FIRAuth.auth()?.currentUser?.uid ?? "nil"
+        databaseRef.child("users").child(uid).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject]{
+                let first = dict["first-name"]?.uppercaseString
+                let last = dict["last-name"]?.uppercaseString
+                self.nameLabel.text! = first! + " " + last!
+                let classYear = dict["class"]?.uppercaseString
+                let gender = dict["gender"]?.uppercaseString
+                self.infoLabel.text! = classYear! + " | " + gender!
+                if let profileImageURL = dict["pic"] as? String{
+                    let url = NSURL(string: profileImageURL)
+                    NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, response, error) in
+                        if error != nil {
+                            print(error)
+                            return
+                        }
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.profilePic?.image = UIImage(data: data!)
+                        }
+                    }).resume()
+                }
+            }
+        })
+    }*/
     
     // MARK: Properties
     
@@ -55,72 +64,34 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
     
     private var chats: [Chat] = [] // 3
     
-    
-    
-    /*func numberOfSections(tableView: UITableView) -> Int {
-     
-     return 2 // 1
-     
-     }*/
-    
-    
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // 2
         
-        if let currentSection: Section = Section(rawValue: section) {
-            
-            switch currentSection {
-                
-            case .createNewChatSection:
-                
-                return 1
-                
-            case .currentChatsSection:
-                
-                return chats.count
-                
-            }
-            
-        } else {
-            
-            return 0
-            
-        }
+       return 2
         
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selection = indexPath.row
+        if selection == 1 {
+            self.performSegueWithIdentifier("toSpecificChat", sender: nil)
+        }
+    }
     
-    
-    // 3
-    
-    //override func tableView( tableView: UITableView, cellForRowAt indexPath: NSIndexPath) -> UITableViewCell {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toSpecificChat" {
+            let destViewController = segue.destinationViewController as! LiveChatViewController
+            destViewController.chatUser = "Erin Flynn"
+        }
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        //let reuseIdentifier = (indexPath as NSIndexPath).section == Section.createNewChatSection.rawValue ? "NewChat" : "ExistingChat"
+        let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell", forIndexPath: indexPath) as! CreateChatCell
         
-        //let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, forIndexPath: indexPath)
-        
-        //let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: NSIndexPath) //got rid of withIdentifier -- ok??
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell", forIndexPath: indexPath)
-        
-        if (indexPath as NSIndexPath).section == Section.createNewChatSection.rawValue {
-            
-            if let createNewChatCell = cell as? CreateChatCell {
-                
-                newChatTextField = createNewChatCell.newChatNameField
-                
-            }
-            
-        } else if (indexPath as NSIndexPath).section == Section.currentChatsSection.rawValue {
-            
-            cell.textLabel?.text = chats[(indexPath as NSIndexPath).row].name
-            
-        }
-        
-        
-        
+        cell.toChatName.text = "Erin Flynn"
+        cell.toChatProfileImage.image = UIImage(named: "erin")
+        cell.toChatProfileImage.layer.cornerRadius = cell.toChatProfileImage.frame.size.width/2.2
+        cell.toChatProfileImage.clipsToBounds = true
         return cell
         
     }
@@ -128,8 +99,6 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidAppear( animated: Bool) {
         
         super.viewDidAppear(animated)
-        
-        
         
         chats.append(Chat(id: "1", name: "Channel1"))
         
@@ -140,25 +109,5 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
         //self.tableView.reloadData()
         
     }
-    
-    /*
-     
-     // MARK: - Navigation
-     
-     
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     
-     // Get the new view controller using segue.destinationViewController.
-     
-     // Pass the selected object to the new view controller.
-     
-     }
-     
-     */
-    
-    
     
 }

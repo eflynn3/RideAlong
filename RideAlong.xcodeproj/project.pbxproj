@@ -21,6 +21,7 @@
 		A566F0F91E6BE02900EE4262 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566F0F81E6BE02900EE4262 /* RegisterViewController.swift */; };
 		A566F0FC1E6BE39100EE4262 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */; };
 		A57A1AC11E96EF640030BB07 /* CurrentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A1AC01E96EF640030BB07 /* CurrentProfileViewController.swift */; };
+		A594B96A1EB126880033423A /* LiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594B9691EB126880033423A /* LiveChatViewController.swift */; };
 		A5B4A2341E970B2F003AAD2A /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4A2331E970B2F003AAD2A /* OfferRideViewController.swift */; };
 		A5B55A7E1EAD2F2400D658EE /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B55A7D1EAD2F2400D658EE /* NewsFeedViewController.swift */; };
 		A5B55A841EAD43BC00D658EE /* NewsFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B55A831EAD43BC00D658EE /* NewsFeedTableCell.swift */; };
@@ -80,6 +81,7 @@
 		A566F0FA1E6BE32B00EE4262 /* RideAlong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RideAlong.entitlements; sourceTree = "<group>"; };
 		A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		A57A1AC01E96EF640030BB07 /* CurrentProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentProfileViewController.swift; sourceTree = "<group>"; };
+		A594B9691EB126880033423A /* LiveChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChatViewController.swift; sourceTree = "<group>"; };
 		A5B4A2331E970B2F003AAD2A /* OfferRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferRideViewController.swift; sourceTree = "<group>"; };
 		A5B55A7D1EAD2F2400D658EE /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		A5B55A831EAD43BC00D658EE /* NewsFeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedTableCell.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				A503C69E1E4A2C4900EE2E35 /* AppDelegate.swift */,
 				A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */,
 				A5C292C41E8B00B80093995D /* Main.storyboard */,
+				A594B9691EB126880033423A /* LiveChatViewController.swift */,
 				A54B3A8B1EAFEA0800ED47D0 /* CreateChatCell.swift */,
 				A54B3A8D1EAFEA8800ED47D0 /* ChatListViewController.swift */,
 				A5B55A831EAD43BC00D658EE /* NewsFeedTableCell.swift */,
@@ -509,6 +512,7 @@
 			files = (
 				A566F0FC1E6BE39100EE4262 /* LoginPageViewController.swift in Sources */,
 				A57A1AC11E96EF640030BB07 /* CurrentProfileViewController.swift in Sources */,
+				A594B96A1EB126880033423A /* LiveChatViewController.swift in Sources */,
 				A503C69F1E4A2C4900EE2E35 /* AppDelegate.swift in Sources */,
 				A5B55A841EAD43BC00D658EE /* NewsFeedTableCell.swift in Sources */,
 				A54B3A8E1EAFEA8800ED47D0 /* ChatListViewController.swift in Sources */,
