@@ -17,6 +17,7 @@ class CreateChatCell: UITableViewCell {
     
     @IBOutlet weak var toChatName: UILabel!
     @IBOutlet weak var toChatProfileImage: UIImageView!
+    
 
     
 }

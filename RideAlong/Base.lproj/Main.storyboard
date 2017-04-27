@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-29.066666666666666" y="106.5"/>
+            <point key="canvasLocation" x="-413.5" y="83.5"/>
         </scene>
         <!--Register Page-->
         <scene sceneID="Umh-Kl-tng">
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Qn-VI-hJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="214.13333333333333" y="106.5"/>
+            <point key="canvasLocation" x="-6.5" y="-117.5"/>
         </scene>
         <!--CreateProfile-->
         <scene sceneID="gNY-7W-gNH">
@@ -490,7 +490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KtN-57-Y35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670.13333333333333" y="106.5"/>
+            <point key="canvasLocation" x="872.5" y="39.5"/>
         </scene>
         <!--CreateProfile-->
         <scene sceneID="v60-Np-JMv">
@@ -648,22 +648,9 @@
             </objects>
             <point key="canvasLocation" x="1128.5" y="-920.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="PhO-La-gRi">
-            <objects>
-                <viewController id="nzG-6n-NJW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Rjk-6W-dEt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K6v-8c-nNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VTB-nV-unz"/>
         <segue reference="0l6-av-m3F"/>
+        <segue reference="5ob-TV-LhS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -24,12 +24,21 @@ class RegisterViewController: UIViewController {
         self.performSegueWithIdentifier("backToLoginSegue", sender: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "setUpProfile" {
+            let destViewController = segue.destinationViewController as! ProfileViewController
+            destViewController.firstName = self.firstName.text!
+            destViewController.lastName = self.lastName.text!
+            destViewController.email = self.emailField.text!
+        }
+    }
+    
     @IBAction func handleContinue(sender: AnyObject) {
         let email = self.emailField.text!
         let password = self.passwordField.text!
         let confirmPassword = self.confirmPasswordField.text!
-        let firstName = self.firstName.text!
-        let lastName = self.lastName.text!
+        //let firstName = self.firstName.text!
+        //let lastName = self.lastName.text!
         
         if (email != "" && password == confirmPassword) {
             FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in if error == nil {
@@ -41,9 +50,16 @@ class RegisterViewController: UIViewController {
                     return
                 }
                 let userReference = self.DatabaseRef.child("users").child(uid)
-                let values = ["first-name" : firstName, "last-name" : lastName,  "email" :  email, "pic" : "", "car" : "", "seats" : "", "gender" : "", "class" : ""]
-                
+                let values = ["first-name" : "", "last-name" : "",  "email" :  "", "pic" : "", "car" : "", "seats" : "", "gender" : "", "class" : ""]
+                let chatReference = userReference.child("chats")
+                let values2 = ["with_user" : "" ]
                 userReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
+                    if error != nil {
+                        print(error)
+                        return
+                    }
+                })
+                chatReference.updateChildValues(values2, withCompletionBlock: { (error, ref) in
                     if error != nil {
                         print(error)
                         return

@@ -21,7 +21,7 @@ class CurrentProfileViewController: UIViewController {
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

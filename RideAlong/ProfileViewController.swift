@@ -21,9 +21,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     @IBOutlet weak var seatsText: UITextField!
     @IBOutlet weak var profilePic: UIImageView!
     
+    var firstName: String!
+    var lastName: String!
+    var email: String!
+    
     @IBAction func confirmButton(sender: AnyObject) {
         let uid = FIRAuth.auth()?.currentUser!.uid
-        databaseRef.child("users").child(uid!).updateChildValues(["car" : carText.text!, "class" : classYearText.text!, "gender" : genderText.text!, "seats" : seatsText.text!])
+        databaseRef.child("users").child(uid!).updateChildValues(["car" : carText.text!, "class" : classYearText.text!, "gender" : genderText.text!, "seats" : seatsText.text!, "first-name" : self.firstName, "last-name" : self.lastName,  "email" : self.email])
         saveChanges()
         self.performSegueWithIdentifier("backToLogin", sender: nil)
 
