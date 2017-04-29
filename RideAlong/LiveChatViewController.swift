@@ -112,16 +112,16 @@ class LiveChatViewController: JSQMessagesViewController {
         //newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
             // 3
           //  let messageData = snapshot.value as! Dictionary
-        self.itemRef!.observeSingleEventOfType(.Value, withBlock: {(snapshot) in
+        /*self.messRef!.observeSingleEventOfType(.Value, withBlock: {(snapshot) in
             if let dict = snapshot.value as? [String: AnyObject]{
-                if let id = dict["senderId"] as! String!, let name = dict["senderName"] as! String!, let text = dict["text"] as! String! where text.characters.count > 0 {
+                if let id = dict["chats"] as! Dictionary! {
                 // 4
                     self.addMessage(withId: id, name: name, text: text)
                     self.finishReceivingMessage()
                 } else {
                     print("Error! Could not decode message data")
                 }
-            }})
+            }})*/
     }
     
     
