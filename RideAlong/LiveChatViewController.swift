@@ -25,6 +25,7 @@ class LiveChatViewController: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        observeMessages()
 
         self.senderDisplayName = "Erin"
         self.senderId = FIRAuth.auth()?.currentUser?.uid
@@ -114,7 +115,6 @@ class LiveChatViewController: JSQMessagesViewController {
         JSQSystemSoundPlayer.jsq_playMessageSentSound() // 4
         
         finishSendingMessage() // 5
-        observeMessages()
     }
     
     private func observeMessages() {
@@ -124,13 +124,20 @@ class LiveChatViewController: JSQMessagesViewController {
         let ref = FIRDatabase.database().reference().child("chats").child("Erin")
         print(messages.count + 1)
         //let messageQuery = ref.queryLimited(toLast:25)
-        
-        // 2. We can use the observe method to listen for new
-        // messages being written to the Firebase DB
-        //newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
-            // 3
-          //  let messageData = snapshot.value as! Dictionary
-        ref.observeSingleEventOfType(.ChildAdded, withBlock: {(snapshot) in
+        let q = ref.queryLimitedToLast(25)
+        let newMessageRefHandle = q.observeSingleEventOfType(.ChildAdded, withBlock: { (snapshot) -> Void in
+            let messageData = snapshot.value as! Dictionary<String, String>
+
+            if let id = messageData["senderID"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String! where text.characters.count > 0 {
+                self.addMessage(withId: id, name: name, text: text)
+                
+                // 5
+                self.finishReceivingMessage()
+            } else {
+                print("Error! Could not decode message data")
+            }
+                
+        /*ref.observeSingleEventOfType(.ChildAdded, withBlock: {(snapshot) in
             if let dict = snapshot.value as? NSDictionary!{
                 if let text = dict["text"] as! String! {
                     print("IN**********")
@@ -144,8 +151,9 @@ class LiveChatViewController: JSQMessagesViewController {
                 }
 
             }})
+        //self.finishReceivingMessage()*/
 
-    }
+        })}
     
 
 
