@@ -52,7 +52,7 @@ class RequestRideViewController: UIViewController {
     }
 
     @IBAction func handlePublish(sender: AnyObject) {
-        let itemRef = databaseRef.child("requests").child("1") // 1
+        let itemRef = databaseRef.child("requests").childByAutoId() // 1
         let messageItem = [ // 2
             "sender": self.senderID,
             "name" : self.name,

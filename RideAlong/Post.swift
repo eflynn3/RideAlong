@@ -9,41 +9,46 @@
 import Foundation
 import Firebase
 
-/*class Post {
+class Post {
     
-    private var postRef: FIRDatabase!
+    private var postRef: FIRDatabaseReference!
     
-    private var _location: String!
-    private var _date: String!
-    private var _time: String
-    private var _senderID: String!
-    private var _seats: String!
+    private var _location: String?
+    private var _date: String?
+    private var _time: String?
+    private var _name: String?
+    private var _seats: String?
+    private var _Key: String?
 
     
     var location: String {
-        return _location
+        return _location!
     }
     
     var date: String {
-        return _date
+        return _date!
     }
     
     var time: String {
-        return _time
+        return _time!
     }
     
-    var senderID: String {
-        return _senderID
+    var name: String {
+        return _name!
     }
     
     var seats: String {
-        return _seats
+        return _seats!
+    }
+    
+    var key: String {
+        return _Key!
     }
     
     // Initialize the new Joke
     
-    /*init(key: String, dictionary: Dictionary<String, AnyObject>) {
-        //self._jokeKey = key
+    init(key: String, dictionary: Dictionary<String, AnyObject>) {
+        self._Key = key
         
         // Within the Joke, or Key, the following properties are children
     
@@ -63,14 +68,14 @@ import Firebase
             self._seats = seat
         }
         
-        if let ID = dictionary["senderID"] as? String {
-            self._senderID = ID
+        if let n = dictionary["name"] as? String {
+            self._name = n
         }
         
         // The above properties are assigned to their key.
         
-        //self._jokeRef = DataService.dataService.JOKE_REF.childByAppendingPath(self._jokeKey)
-    }*/
+        self.postRef = FIRDatabase.database().reference().child("requests").child(self._Key!)
+    }
     
     /*func addSubtractVote(addVote: Bool) {
         
@@ -85,4 +90,4 @@ import Firebase
         _jokeRef.childByAppendingPath("votes").setValue(_jokeVotes)
         
     }*/
-}*/
+}

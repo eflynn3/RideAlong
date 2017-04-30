@@ -19,13 +19,16 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     var location: String!
     var senderID: String!
     
+    var posts = [Post]()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        observePosts()
+        self.tableView.reloadData()
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.allowsSelection = false
-
         // Load the sample data.
     }
     
@@ -35,24 +38,17 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        //return 2
+        return posts.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        let post = posts[indexPath.row]
+        
         let cell = self.tableView.dequeueReusableCellWithIdentifier("NFCell", forIndexPath: indexPath) as! NewsFeedTableCell
-        var cellNumber = indexPath.row
-        cellNumber = cellNumber + 1
-        print(cellNumber)
-        getData(cellNumber)
         
-        cell.nameText.text = self.name
-        cell.postText.text = self.location
-        cell.profileImage.image = UIImage(named: "erin")
-        cell.date.text = self.date
-        cell.time.text = self.time
-        cell.datePosted.text = "23 mins ago"
-        
-        cell.createCell()
+        cell.createCell(post)
         return cell
         
     }
@@ -77,6 +73,21 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
             }
         })
     }
+    
+    private func observePosts() {
+        let ref = FIRDatabase.database().reference().child("requests")
+
+        let q = ref.queryLimitedToLast(25)
+        let newMessageRefHandle = q.observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
+            let dict = snapshot.value as! Dictionary<String, String>
+            let key = snapshot.key
+            
+            let post = Post(key: key, dictionary: dict)
+            self.posts.insert(post, atIndex: 0)
+        })
+        self.tableView.reloadData()
+    }
+
     
     
 }

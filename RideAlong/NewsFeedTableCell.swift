@@ -21,6 +21,7 @@ class NewsFeedTableCell: UITableViewCell {
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var interestedButton: UIButton!
     
+    var post: Post!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +29,15 @@ class NewsFeedTableCell: UITableViewCell {
     }
 
     
-    func createCell() {
+    func createCell(post: Post) {
+        
+        self.nameText.text = post.name  //this needs to be changed to name
+        self.postText.text = post.location
+        self.profileImage.image = UIImage(named: "erin")
+        self.date.text = post.date
+        self.time.text = post.time
+        self.datePosted.text = "23 mins ago"
+        
         backgroundCardView.backgroundColor = UIColor(colorLiteralRed: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
         contentView.backgroundColor = UIColor(colorLiteralRed:0.047, green:0.616, blue:0.616, alpha:1.0)
         
