@@ -12,6 +12,7 @@ import Firebase
 
 class ChatListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var userRef = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,13 +59,18 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toSpecificChat" {
             let destViewController = segue.destinationViewController as! LiveChatViewController
-            //destViewController.chatUser = "dybNDmCpVfOrURdkk6yePiVbLWJ2" //turley id
+            destViewController.chatUser = "dybNDmCpVfOrURdkk6yePiVbLWJ2" //turley id
         }
     }
     
     override func viewDidAppear( animated: Bool) {
         
         super.viewDidAppear(animated)
+        
+        let ref = self.userRef.child("chats") // 2
+        let Item = []
+        ref.setValue(Item) // 4
+        
         
     }
     
@@ -76,6 +82,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.toChatProfileImage.image = UIImage(named: "erin")
         cell.toChatProfileImage.layer.cornerRadius = cell.toChatProfileImage.frame.size.width/2.2
         cell.toChatProfileImage.clipsToBounds = true
+        
         return cell
         
     }

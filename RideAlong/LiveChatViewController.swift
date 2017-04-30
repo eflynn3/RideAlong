@@ -15,6 +15,7 @@ class LiveChatViewController: JSQMessagesViewController {
     var messRef: FIRDatabaseReference?
     var itemRef: FIRDatabaseReference?
     var chatUser: String!
+    var count: Int!
     var messages = [JSQMessage]()
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
@@ -34,14 +35,15 @@ class LiveChatViewController: JSQMessagesViewController {
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
-        observeMessages()
+        //observeMessages()
+        
         /*// messages from someone else
         addMessage(withId: "foo", name: "Mr.Bolt", text: "I am so fast!")
         // messages sent from local sender
         addMessage(withId: senderId, name: "Me", text: "I bet I can run faster than you!")
         addMessage(withId: senderId, name: "Me", text: "I like to run!")
         // animates the receiving of a new message on the view
-        finishReceivingMessage() */
+        finishReceivingMessage()*/
         // Load the sample data.
     }
     
@@ -87,12 +89,12 @@ class LiveChatViewController: JSQMessagesViewController {
     }
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
-        self.itemRef = self.messRef!.childByAutoId() // 1
+        self.count = messages.count + 1
+        self.itemRef = FIRDatabase.database().reference().child("chats").child("Erin").child(String(messages.count + 1)) // 1
         let messageItem = [ // 2
-            "senderId": senderId!,
-            "senderName": senderDisplayName!,
             "text": text!,
-            "receiverID" : "dybNDmCpVfOrURdkk6yePiVbLWJ2"
+            "senderID" : self.senderId,
+            "senderName": "Me"
             ]
         
         self.itemRef!.setValue(messageItem) // 3
@@ -100,33 +102,44 @@ class LiveChatViewController: JSQMessagesViewController {
         JSQSystemSoundPlayer.jsq_playMessageSentSound() // 4
         
         finishSendingMessage() // 5
+        observeMessages()
     }
     
     private func observeMessages() {
-        //messageRef = self.userRef!.child("users").child(self.senderId!).child("chats").child("-KikfNlCsXforuVs-Bij")
+        //messageRef = self.userRef!.child("users").child(self.senderId!).child("chats").child(self.chatUser)
         // 1.
-        //let messageQuery = messageRef.queryLimited(toLast:25)
+        
+        let ref = FIRDatabase.database().reference().child("chats").child("Erin").child(String(messages.count + 1))
+        print(messages.count + 1)
+        //let messageQuery = ref.queryLimited(toLast:25)
         
         // 2. We can use the observe method to listen for new
         // messages being written to the Firebase DB
         //newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
             // 3
           //  let messageData = snapshot.value as! Dictionary
-        /*self.messRef!.observeSingleEventOfType(.Value, withBlock: {(snapshot) in
-            if let dict = snapshot.value as? [String: AnyObject]{
-                if let id = dict["chats"] as! Dictionary! {
-                // 4
+        ref.observeSingleEventOfType(.Value, withBlock: {(snapshot) in
+            if let dict = snapshot.value as? NSDictionary!{
+                if let text = dict["text"] as! String! {
+                    print("IN**********")
+                    print(text)
+                    let id = self.senderId
+                    let name = "Erin"
                     self.addMessage(withId: id, name: name, text: text)
                     self.finishReceivingMessage()
                 } else {
                     print("Error! Could not decode message data")
                 }
-            }})*/
+
+            }})
+
     }
+
     
     
     /*override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = super.collectionView.dequeueReusableCellWithReuseIdentifier("reuseID", forIndexPath: <#T##NSIndexPath#>) as! JSQMessagesCollectionViewCell
+        //let cell = super.collectionView.dequeueReusableCellWithReuseIdentifier(reus, forIndexPath: indexPath) as! JSQMessagesCollectionViewCell
+        let cell = super.collectionView.dequeueReusableCellWithReuseIdentifier("reuseID", forIndexPath: indexPath) as! JSQMessagesCollectionView
         let message = messages[indexPath.item]
         
         if message.senderId == senderId {
