@@ -307,7 +307,7 @@
         <!--Request a Ride Page-->
         <scene sceneID="mdV-5S-zHi">
             <objects>
-                <viewController id="L9u-Jo-gWq" userLabel="Request a Ride Page" sceneMemberID="viewController">
+                <viewController id="L9u-Jo-gWq" userLabel="Request a Ride Page" customClass="RequestRideViewController" customModule="RideAlong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AL8-bD-Gkc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -740,7 +740,7 @@
         <image name="RideAlong.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Duc-SZ-bSV"/>
+        <segue reference="0l6-av-m3F"/>
         <segue reference="Tf7-nn-tNz"/>
     </inferredMetricsTieBreakers>
 </document>

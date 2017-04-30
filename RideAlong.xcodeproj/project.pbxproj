@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0065DF151EB578BC00C7049D /* RideAlong.png in Resources */ = {isa = PBXBuildFile; fileRef = 0065DF141EB578BC00C7049D /* RideAlong.png */; };
+		0065DF191EB58EE300C7049D /* RequestRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065DF181EB58EE300C7049D /* RequestRideViewController.swift */; };
 		3EE9345410163EE16318FD98 /* Pods_RideAlongUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5CF72237FE9F11083A06CF /* Pods_RideAlongUITests.framework */; };
 		67D5DB512B02ED6D574AFC6C /* Pods_RideAlong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EFA4C8673C16ABD9D52AFA /* Pods_RideAlong.framework */; };
 		8AA22C8E00DD192DDDF1B9A7 /* Pods_RideAlong_RideAlongUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE3939966C21FA0C46F439E /* Pods_RideAlong_RideAlongUITests.framework */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		0065DF141EB578BC00C7049D /* RideAlong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RideAlong.png; path = ../../../Downloads/RideAlong.png; sourceTree = "<group>"; };
+		0065DF181EB58EE300C7049D /* RequestRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRideViewController.swift; sourceTree = "<group>"; };
 		033A02D6A0DBBEF990958CA2 /* Pods-RideAlong-RideAlongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlong-RideAlongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlong-RideAlongTests/Pods-RideAlong-RideAlongTests.release.xcconfig"; sourceTree = "<group>"; };
 		1607AFC075D18E3C4DD1A91F /* Pods-RideAlong-RideAlongUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlong-RideAlongUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlong-RideAlongUITests/Pods-RideAlong-RideAlongUITests.release.xcconfig"; sourceTree = "<group>"; };
 		18595E7741E714AE85D24394 /* Pods-RideAlongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlongTests/Pods-RideAlongTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				A5B4A2351E970C2B003AAD2A /* Model */,
 				A566F0FA1E6BE32B00EE4262 /* RideAlong.entitlements */,
 				A503C69E1E4A2C4900EE2E35 /* AppDelegate.swift */,
+				0065DF181EB58EE300C7049D /* RequestRideViewController.swift */,
 				A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */,
 				A5C292C41E8B00B80093995D /* Main.storyboard */,
 				A594B9691EB126880033423A /* LiveChatViewController.swift */,
@@ -519,6 +522,7 @@
 				A594B96A1EB126880033423A /* LiveChatViewController.swift in Sources */,
 				A503C69F1E4A2C4900EE2E35 /* AppDelegate.swift in Sources */,
 				A5B55A841EAD43BC00D658EE /* NewsFeedTableCell.swift in Sources */,
+				0065DF191EB58EE300C7049D /* RequestRideViewController.swift in Sources */,
 				A54B3A8E1EAFEA8800ED47D0 /* ChatListViewController.swift in Sources */,
 				A5B4A2341E970B2F003AAD2A /* OfferRideViewController.swift in Sources */,
 				A54B3A901EAFEAB300ED47D0 /* Chat.swift in Sources */,
