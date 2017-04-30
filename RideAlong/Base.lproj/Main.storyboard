@@ -352,6 +352,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="handlePublish:" destination="L9u-Jo-gWq" eventType="touchUpInside" id="9u2-SI-g4a"/>
                                     <segue destination="bQm-bA-8af" kind="modal" identifier="requestToMain" id="Tf7-nn-tNz"/>
                                 </connections>
                             </button>
@@ -359,6 +360,11 @@
                         <color key="backgroundColor" red="0.13905936020000001" green="0.41955616890000003" blue="0.73559143829999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="handlePublish" destination="1Tu-AB-ghE" id="fTp-i0-RVl"/>
+                        <outlet property="locationField" destination="ZW1-eQ-HX2" id="sIR-8F-3nT"/>
+                        <outlet property="passengersField" destination="UY1-Ae-36q" id="5NO-aR-n7d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msx-xD-FLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
