@@ -39,12 +39,6 @@ class NewsFeedTableCell: UITableViewCell {
         backgroundCardView.layer.shadowOffset = CGSize(width: 0, height: 0)
         backgroundCardView.layer.shadowOpacity = 0.8
         
-        nameText.text = "Erin"
-        postText.text = "Going to Target In Mishawaka"
-        profileImage.image = UIImage(named: "erin")
-        date.text = "Monday, April 23rd"
-        time.text = "2:00 pm"
-        datePosted.text = "23 mins ago"
         
         chatButton.layer.cornerRadius = 2
         chatButton.layer.borderWidth = 1
