@@ -125,7 +125,7 @@ class LiveChatViewController: JSQMessagesViewController {
         print(messages.count + 1)
         //let messageQuery = ref.queryLimited(toLast:25)
         let q = ref.queryLimitedToLast(25)
-        let newMessageRefHandle = q.observeSingleEventOfType(.ChildAdded, withBlock: { (snapshot) -> Void in
+        let newMessageRefHandle = q.observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
             let messageData = snapshot.value as! Dictionary<String, String>
 
             if let id = messageData["senderID"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String! where text.characters.count > 0 {
