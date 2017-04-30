@@ -67,10 +67,6 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
         
         super.viewDidAppear(animated)
         
-        let ref = self.userRef.child("chats") // 2
-        let Item = []
-        ref.setValue(Item) // 4
-        
         
     }
     
