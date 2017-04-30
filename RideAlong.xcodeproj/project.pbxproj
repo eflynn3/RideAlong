@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0065DF151EB578BC00C7049D /* RideAlong.png in Resources */ = {isa = PBXBuildFile; fileRef = 0065DF141EB578BC00C7049D /* RideAlong.png */; };
 		3EE9345410163EE16318FD98 /* Pods_RideAlongUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5CF72237FE9F11083A06CF /* Pods_RideAlongUITests.framework */; };
 		67D5DB512B02ED6D574AFC6C /* Pods_RideAlong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EFA4C8673C16ABD9D52AFA /* Pods_RideAlong.framework */; };
 		8AA22C8E00DD192DDDF1B9A7 /* Pods_RideAlong_RideAlongUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE3939966C21FA0C46F439E /* Pods_RideAlong_RideAlongUITests.framework */; };
@@ -23,6 +22,7 @@
 		A566F0FC1E6BE39100EE4262 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */; };
 		A57A1AC11E96EF640030BB07 /* CurrentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A1AC01E96EF640030BB07 /* CurrentProfileViewController.swift */; };
 		A594B96A1EB126880033423A /* LiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594B9691EB126880033423A /* LiveChatViewController.swift */; };
+		A5A2CDA11EB58FF600916E7B /* RideAlong.png in Resources */ = {isa = PBXBuildFile; fileRef = A5A2CDA01EB58FF600916E7B /* RideAlong.png */; };
 		A5B4A2341E970B2F003AAD2A /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4A2331E970B2F003AAD2A /* OfferRideViewController.swift */; };
 		A5B55A7E1EAD2F2400D658EE /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B55A7D1EAD2F2400D658EE /* NewsFeedViewController.swift */; };
 		A5B55A841EAD43BC00D658EE /* NewsFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B55A831EAD43BC00D658EE /* NewsFeedTableCell.swift */; };
@@ -51,7 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0065DF141EB578BC00C7049D /* RideAlong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RideAlong.png; path = ../../../Downloads/RideAlong.png; sourceTree = "<group>"; };
 		033A02D6A0DBBEF990958CA2 /* Pods-RideAlong-RideAlongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlong-RideAlongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlong-RideAlongTests/Pods-RideAlong-RideAlongTests.release.xcconfig"; sourceTree = "<group>"; };
 		1607AFC075D18E3C4DD1A91F /* Pods-RideAlong-RideAlongUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlong-RideAlongUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlong-RideAlongUITests/Pods-RideAlong-RideAlongUITests.release.xcconfig"; sourceTree = "<group>"; };
 		18595E7741E714AE85D24394 /* Pods-RideAlongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlongTests/Pods-RideAlongTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		A57A1AC01E96EF640030BB07 /* CurrentProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentProfileViewController.swift; sourceTree = "<group>"; };
 		A594B9691EB126880033423A /* LiveChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChatViewController.swift; sourceTree = "<group>"; };
+		A5A2CDA01EB58FF600916E7B /* RideAlong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RideAlong.png; path = ../../../Desktop/RideAlong.png; sourceTree = "<group>"; };
 		A5B4A2331E970B2F003AAD2A /* OfferRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferRideViewController.swift; sourceTree = "<group>"; };
 		A5B55A7D1EAD2F2400D658EE /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		A5B55A831EAD43BC00D658EE /* NewsFeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedTableCell.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 				A5B55A831EAD43BC00D658EE /* NewsFeedTableCell.swift */,
 				A5B55A7D1EAD2F2400D658EE /* NewsFeedViewController.swift */,
 				A503C6A51E4A2C4900EE2E35 /* Assets.xcassets */,
-				0065DF141EB578BC00C7049D /* RideAlong.png */,
+				A5A2CDA01EB58FF600916E7B /* RideAlong.png */,
 				A503C6A71E4A2C4900EE2E35 /* LaunchScreen.storyboard */,
 				A5C292C01E8AF5950093995D /* GoogleService-Info.plist */,
 				A503C6AA1E4A2C4900EE2E35 /* Info.plist */,
@@ -351,7 +351,7 @@
 				A5C292C11E8AF5950093995D /* GoogleService-Info.plist in Resources */,
 				A503C6A61E4A2C4900EE2E35 /* Assets.xcassets in Resources */,
 				A5C292C61E8B00B80093995D /* Main.storyboard in Resources */,
-				0065DF151EB578BC00C7049D /* RideAlong.png in Resources */,
+				A5A2CDA11EB58FF600916E7B /* RideAlong.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
