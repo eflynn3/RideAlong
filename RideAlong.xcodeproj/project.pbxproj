@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007194E41EB6CAB100CF5FD4 /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 007194E31EB6CAB100CF5FD4 /* left-arrow.png */; };
 		3EE9345410163EE16318FD98 /* Pods_RideAlongUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5CF72237FE9F11083A06CF /* Pods_RideAlongUITests.framework */; };
 		67D5DB512B02ED6D574AFC6C /* Pods_RideAlong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EFA4C8673C16ABD9D52AFA /* Pods_RideAlong.framework */; };
 		8AA22C8E00DD192DDDF1B9A7 /* Pods_RideAlong_RideAlongUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE3939966C21FA0C46F439E /* Pods_RideAlong_RideAlongUITests.framework */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		007194E31EB6CAB100CF5FD4 /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "left-arrow.png"; path = "../../../Desktop/left-arrow.png"; sourceTree = "<group>"; };
 		033A02D6A0DBBEF990958CA2 /* Pods-RideAlong-RideAlongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlong-RideAlongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlong-RideAlongTests/Pods-RideAlong-RideAlongTests.release.xcconfig"; sourceTree = "<group>"; };
 		1607AFC075D18E3C4DD1A91F /* Pods-RideAlong-RideAlongUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlong-RideAlongUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlong-RideAlongUITests/Pods-RideAlong-RideAlongUITests.release.xcconfig"; sourceTree = "<group>"; };
 		18595E7741E714AE85D24394 /* Pods-RideAlongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideAlongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideAlongTests/Pods-RideAlongTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				A503C69E1E4A2C4900EE2E35 /* AppDelegate.swift */,
 				A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */,
 				A5C292C41E8B00B80093995D /* Main.storyboard */,
+				007194E31EB6CAB100CF5FD4 /* left-arrow.png */,
 				A594B9691EB126880033423A /* LiveChatViewController.swift */,
 				A54B3A8B1EAFEA0800ED47D0 /* CreateChatCell.swift */,
 				A54B3A8D1EAFEA8800ED47D0 /* ChatListViewController.swift */,
@@ -355,6 +358,7 @@
 			files = (
 				A503C6A91E4A2C4900EE2E35 /* LaunchScreen.storyboard in Resources */,
 				A5C292C11E8AF5950093995D /* GoogleService-Info.plist in Resources */,
+				007194E41EB6CAB100CF5FD4 /* left-arrow.png in Resources */,
 				A503C6A61E4A2C4900EE2E35 /* Assets.xcassets in Resources */,
 				A5C292C61E8B00B80093995D /* Main.storyboard in Resources */,
 				A5A2CDA11EB58FF600916E7B /* RideAlong.png in Resources */,
