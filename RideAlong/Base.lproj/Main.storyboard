@@ -634,7 +634,7 @@
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VU4-nt-PtP">
                                             <rect key="frame" x="18" y="7" width="89" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.97364612846078158" green="1" blue="0.97225192946961703" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.83921568627450982" green="0.88235294117647056" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <state key="normal" title="News Feed">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -795,8 +795,9 @@
         <image name="RideAlong.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fta-gS-Rmj"/>
-        <segue reference="Wq7-bC-98s"/>
         <segue reference="0l6-av-m3F"/>
+        <segue reference="VTB-nV-unz"/>
+        <segue reference="UXh-aD-t2r"/>
+        <segue reference="Wq7-bC-98s"/>
     </inferredMetricsTieBreakers>
 </document>

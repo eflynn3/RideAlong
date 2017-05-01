@@ -66,8 +66,7 @@ class LiveChatViewController: JSQMessagesViewController {
         //let leftButton =  UIBarButtonItem(title: "Back", target: self, action: #selector(btn_clicked(_:)))
         //let leftButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: btn_clicked())
         //let rightButton = UIBarButtonItem(title: "Right", style: .plain, target: self, action: nil)
-        var b = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(btn_clicked(_:))
-        )
+        var b = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(btn_clicked(_:)))
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = b
         //navigationItem.rightBarButtonItem = rightButton
