@@ -25,6 +25,8 @@ class LiveChatViewController: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.topContentAdditionalInset = 50
         observeMessages()
 
         self.senderDisplayName = "Erin"
@@ -122,7 +124,6 @@ class LiveChatViewController: JSQMessagesViewController {
         // 1.
         
         let ref = FIRDatabase.database().reference().child("chats").child("Erin")
-        print(messages.count + 1)
         //let messageQuery = ref.queryLimited(toLast:25)
         let q = ref.queryLimitedToLast(25)
         let newMessageRefHandle = q.observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
