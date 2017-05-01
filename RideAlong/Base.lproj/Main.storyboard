@@ -537,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6Z-wV-axq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-44.5" y="430.5"/>
+            <point key="canvasLocation" x="403.5" y="45.5"/>
         </scene>
         <!--Set Up Payment Page-->
         <scene sceneID="VgZ-E5-5Hs">
@@ -727,51 +727,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbM-3y-u6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="721.5" y="-523.5"/>
+            <point key="canvasLocation" x="1118.5" y="-643.5"/>
         </scene>
         <!--Live Chat View Controller-->
         <scene sceneID="DRK-4s-lFL">
             <objects>
                 <viewController id="1C7-OJ-tkd" customClass="LiveChatViewController" customModule="RideAlong" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jrE-Sa-yqw">
+                    <view key="view" contentMode="scaleToFill" id="frV-dk-g3J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar opaque="NO" contentMode="scaleToFill" translucent="NO" id="c7A-fN-SPh">
+                            <navigationBar contentMode="scaleToFill" id="b6v-sV-a1i">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Chat" id="6xR-8b-rJm">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="hOf-z5-3OT">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="E9P-sC-Yxo">
-                                                <rect key="frame" x="16" y="7" width="34" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Back"/>
-                                                <connections>
-                                                    <segue destination="7i6-9R-2aj" kind="modal" id="5EZ-Ra-eJw"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Title" id="f20-wP-6LH"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <segue destination="bQm-bA-8af" kind="modal" identifier="chatToNewsFeed" id="fta-gS-Rmj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gys-Se-xkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="560.5" y="-185.5"/>
+            <point key="canvasLocation" x="741.5" y="-262.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ssE-Fk-5pv">
+            <objects>
+                <viewController id="gLH-Yh-Grv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qbp-Ig-1qI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="986-z9-FMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
         <image name="RideAlong.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VTB-nV-unz"/>
-        <segue reference="5EZ-Ra-eJw"/>
-        <segue reference="OYf-ew-sUt"/>
+        <segue reference="fta-gS-Rmj"/>
+        <segue reference="Wq7-bC-98s"/>
         <segue reference="0l6-av-m3F"/>
     </inferredMetricsTieBreakers>
 </document>

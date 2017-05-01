@@ -25,7 +25,7 @@ class LiveChatViewController: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addNavBar()
         self.topContentAdditionalInset = 50
         observeMessages()
 
@@ -48,6 +48,39 @@ class LiveChatViewController: JSQMessagesViewController {
         // animates the receiving of a new message on the view
         finishReceivingMessage()*/
         // Load the sample data.
+    }
+    
+    func addNavBar() {
+        let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width + 40, height:50)) // Offset by 20 pixels vertically to take the status bar into account
+        
+        //navigationBar.barTintColor = UIColor.blackColor()
+        navigationBar.barTintColor = UIColor.whiteColor()
+        
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.blackColor()]
+        
+        // Create a navigation item with a title
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Erin Turley"
+        
+        // Create left and right button for navigation item
+        //let leftButton =  UIBarButtonItem(title: "Back", target: self, action: #selector(btn_clicked(_:)))
+        //let leftButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: btn_clicked())
+        //let rightButton = UIBarButtonItem(title: "Right", style: .plain, target: self, action: nil)
+        var b = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(btn_clicked(_:))
+        )
+        // Create two buttons for the navigation item
+        navigationItem.leftBarButtonItem = b
+        //navigationItem.rightBarButtonItem = rightButton
+        
+        // Assign the navigation item to the navigation bar
+        navigationBar.items = [navigationItem]
+        
+        // Make the navigation bar a subview of the current view controller
+        self.view.addSubview(navigationBar)
+    }
+    
+    func btn_clicked(_ sender: UIBarButtonItem) {
+        performSegueWithIdentifier("chatToNewsFeed", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
