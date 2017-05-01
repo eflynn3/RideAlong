@@ -18,7 +18,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     var seats: String!
     var location: String!
     var senderID: String!
-    
+    var type: String!
     var posts = [Post]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,6 +30,13 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.allowsSelection = false
         // Load the sample data.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toChat" {
+            let destViewController = segue.destinationViewController as! LiveChatViewController
+            destViewController.chatUser = "F0TddlmdRgW98r9NGp5ahceZ2qO2" //turley id
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,10 +62,10 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        return 200.0;//Your custom row height
+        return 170.0;//Your custom row height
     }
     
-    func getData(cellNumber: Int) {
+    /*func getData(cellNumber: Int) {
         
         let uid = FIRAuth.auth()?.currentUser?.uid ?? "nil"
         databaseRef.child("requests").child(String("1")).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
@@ -70,9 +77,10 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
                 self.senderID = dict["sender"]?.uppercaseString
                 self.name = dict["name"]?.uppercaseString
                 self.location = dict["location"]?.uppercaseString
+                self.type = dict["type"]?.uppercaseString
             }
         })
-    }
+    }*/
     
     private func observePosts() {
         let ref = FIRDatabase.database().reference().child("requests")

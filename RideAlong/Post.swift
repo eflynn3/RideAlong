@@ -19,7 +19,11 @@ class Post {
     private var _name: String?
     private var _seats: String?
     private var _Key: String?
-
+    private var _type: String?
+    
+    var type: String {
+        return _type!
+    }
     
     var location: String {
         return _location!
@@ -70,6 +74,10 @@ class Post {
         
         if let n = dictionary["name"] as? String {
             self._name = n
+        }
+        
+        if let t = dictionary["type"] as? String {
+            self._type = t
         }
         
         // The above properties are assigned to their key.

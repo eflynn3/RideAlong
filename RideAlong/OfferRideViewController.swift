@@ -27,9 +27,9 @@ class OfferRideViewController: UIViewController {
         self.senderID = FIRAuth.auth()?.currentUser?.uid
         databaseRef.child("users").child(self.senderID).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
             if let dict = snapshot.value as? [String: AnyObject]{
-                let first = dict["first-name"]?.uppercaseString
-                let last = dict["last-name"]?.uppercaseString
-                self.name = first! + " " + last!
+                let first = dict["first-name"] as! String!
+                let last = dict["last-name"] as! String!
+                self.name = first + " " + last
                 //let classYear = dict["class"]?.uppercaseString
                 //let gender = dict["gender"]?.uppercaseString
                 //self.infoLabel.text! = classYear! + " | " + gender!
@@ -60,7 +60,8 @@ class OfferRideViewController: UIViewController {
             "seats": self.seats.text!,
             "date": self.dateString,
             "time": self.timeString,
-            "location": self.location.text!
+            "location": self.location.text!,
+            "type": "OFFER"
         ]
         
         itemRef.setValue(messageItem)

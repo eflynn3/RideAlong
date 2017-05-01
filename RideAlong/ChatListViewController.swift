@@ -59,7 +59,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toSpecificChat" {
             let destViewController = segue.destinationViewController as! LiveChatViewController
-            destViewController.chatUser = "dybNDmCpVfOrURdkk6yePiVbLWJ2" //turley id
+            destViewController.chatUser = "F0TddlmdRgW98r9NGp5ahceZ2qO2" //turley id
         }
     }
     
