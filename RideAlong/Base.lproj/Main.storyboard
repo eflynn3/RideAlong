@@ -288,7 +288,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="handlePublish:" destination="iFL-Z2-3a5" eventType="touchUpInside" id="Vfg-Qx-M4s"/>
+                                    <action selector="handlePublish:" destination="iFL-Z2-3a5" eventType="touchUpInside" id="tvI-Rg-geF"/>
                                     <segue destination="bQm-bA-8af" kind="modal" identifier="offerToMain" id="Q2D-Tt-8bc"/>
                                 </connections>
                             </button>
@@ -297,9 +297,9 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="date" destination="Lia-pw-jZa" id="v7Z-ad-3TO"/>
-                        <outlet property="location" destination="ogw-rS-6c1" id="9IS-Ia-Flb"/>
-                        <outlet property="seats" destination="52w-r8-0Zo" id="gfy-dJ-Ajs"/>
+                        <outlet property="date" destination="Lia-pw-jZa" id="o1z-iy-lRo"/>
+                        <outlet property="location" destination="ogw-rS-6c1" id="oUf-DT-fNz"/>
+                        <outlet property="seats" destination="52w-r8-0Zo" id="GYt-bO-a2K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUY-0S-8uX" userLabel="First Responder" sceneMemberID="firstResponder"/>
