@@ -20,9 +20,14 @@ class Post {
     private var _seats: String?
     private var _Key: String?
     private var _type: String?
+    private var _photo: String?
     
     var type: String {
         return _type!
+    }
+    
+    var photo: String {
+        return _photo!
     }
     
     var location: String {
@@ -80,6 +85,9 @@ class Post {
             self._type = t
         }
         
+        if let p = dictionary["photo"] as? String {
+            self._photo = p
+        }
         // The above properties are assigned to their key.
         
         self.postRef = FIRDatabase.database().reference().child("requests").child(self._Key!)

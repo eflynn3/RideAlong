@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewsFeedTableCell: UITableViewCell {
 
@@ -32,9 +33,38 @@ class NewsFeedTableCell: UITableViewCell {
     
     func createCell(post: Post) {
         
+        
+                /*if let profileImageURL = dict["pic"] as? String{
+                    let url = NSURL(string: profileImageURL)
+                    NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, response, error) in
+                        if error != nil {
+                            print(error)
+                            return
+                        }
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.profilePic?.image = UIImage(data: data!)
+                        }
+                    }).resume()
+                }
+            }
+        })*/
+
+        if let prof = post.photo as? String {
+            let url = NSURL(string: prof)
+            NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, response, error) in
+                if error != nil {
+                    print(error)
+                    return
+                }
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.profileImage?.image = UIImage(data: data!)
+                }
+            }).resume()
+        }
+            
         self.nameText.text = post.name  //this needs to be changed to name
         //self.postText.text = post.location
-        self.profileImage.image = UIImage(named: "erin")
+        //self.profileImage.image = UIImage(named: "erin")
         self.date.text = "on " + post.date
         self.time.text = "at " + post.time
         self.type.text = post.type

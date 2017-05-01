@@ -18,7 +18,7 @@ class OfferRideViewController: UIViewController {
     
     var senderID: String!
     var databaseRef = FIRDatabase.database().reference()
-    var profilePic: String!
+    var photo: String!
     var name: String!
     var dateString: String!
     var timeString: String!
@@ -30,29 +30,28 @@ class OfferRideViewController: UIViewController {
                 let first = dict["first-name"] as! String!
                 let last = dict["last-name"] as! String!
                 self.name = first + " " + last
+                self.photo = dict["pic"] as! String
                 //let classYear = dict["class"]?.uppercaseString
                 //let gender = dict["gender"]?.uppercaseString
                 //self.infoLabel.text! = classYear! + " | " + gender!
-                if let profileImageURL = dict["pic"] as? String{
-                    self.profilePic = profileImageURL
-                }
+                //if let profileImageURL = dict["pic"] as? String{
+                //    self.profilePic = profileImageURL
+                //}
             }
         })
-        var dateFormatter = NSDateFormatter()
-        
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle   // You can also use Long, Medium and No style.
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        
-        var inputDate = dateFormatter.stringFromDate(date.date)
-        print(inputDate)
-        
-        var myStringArr = inputDate.componentsSeparatedByString(", ")
-        self.dateString = myStringArr[0]
-        self.timeString = myStringArr[1]
-        
+
+    
     }
     
     @IBAction func handlePublish(sender: AnyObject) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy, hh:mm"
+        var strDate = dateFormatter.stringFromDate(self.date.date)
+        print(strDate)
+        var myStringArr = strDate.componentsSeparatedByString(", ")
+        self.dateString = myStringArr[0]
+        self.timeString = myStringArr[1]
+        
         let itemRef = databaseRef.child("requests").childByAutoId() // 1
         let messageItem = [ // 2
             "sender": self.senderID,
@@ -61,7 +60,8 @@ class OfferRideViewController: UIViewController {
             "date": self.dateString,
             "time": self.timeString,
             "location": self.location.text!,
-            "type": "OFFER"
+            "type": "OFFER",
+            "photo" : self.photo
         ]
         
         itemRef.setValue(messageItem)
