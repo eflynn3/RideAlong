@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.profilePic.image = UIImage(named: "default")
         setUpProfile()
 
         // Do any additional setup after loading the view.
