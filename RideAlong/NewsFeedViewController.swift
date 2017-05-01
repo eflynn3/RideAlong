@@ -35,8 +35,24 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
             "type": "OFFER",
             "photo": "https://firebasestorage.googleapis.com/v0/b/ridealong-a0f98.appspot.com/o/F0TddlmdRgW98r9NGp5ahceZ2qO2%2FprofilePic?alt=media&token=723d3dee-3341-4142-b08e-448990fee833"
         ]
+        
+        let messageItem2 = [ // 2
+            "sender": "CJvVlhlEwYX59WpqOX0OBdSSS5w1",
+            "name" : "Erin Flynn",
+            "seats": "4",
+            "date": "5/6/2017",
+            "time": "6:00 pm",
+            "location": "Whole Foods",
+            "type": "OFFER",
+            "photo": "https://firebasestorage.googleapis.com/v0/b/ridealong-a0f98.appspot.com/o/CJvVlhlEwYX59WpqOX0OBdSSS5w1%2FprofilePic?alt=media&token=99383c20-cd41-4d1f-9fa4-db9cd3542783"
+        ]
+        
+        let post2 = Post(key: "2", dictionary: messageItem2)
+        self.posts.insert(post2, atIndex: 0)
+        
         let post = Post(key: "1", dictionary: messageItem)
         self.posts.insert(post, atIndex: 0)
+
         
         observePosts()
         self.tableView.reloadData()
