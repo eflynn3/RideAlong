@@ -25,6 +25,19 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let messageItem = [ // 2
+            "sender": "F0TddlmdRgW98r9NGp5ahceZ2qO2",
+            "name" : "Erin Turley",
+            "seats": "4",
+            "date": "5/2/2017",
+            "time": "2:00 pm",
+            "location": "O'Hare Airport",
+            "type": "OFFER",
+            "photo": "https://firebasestorage.googleapis.com/v0/b/ridealong-a0f98.appspot.com/o/F0TddlmdRgW98r9NGp5ahceZ2qO2%2FprofilePic?alt=media&token=723d3dee-3341-4142-b08e-448990fee833"
+        ]
+        let post = Post(key: "1", dictionary: messageItem)
+        self.posts.insert(post, atIndex: 0)
+        
         observePosts()
         self.tableView.reloadData()
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -86,6 +99,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         let ref = FIRDatabase.database().reference().child("requests")
 
         let q = ref.queryLimitedToLast(25)
+        
         let newMessageRefHandle = q.observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
             let dict = snapshot.value as! Dictionary<String, String>
             let key = snapshot.key
