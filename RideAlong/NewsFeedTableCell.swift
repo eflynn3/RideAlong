@@ -34,14 +34,9 @@ class NewsFeedTableCell: UITableViewCell {
         acceptedButton.addTarget(self, action: #selector(self.seatTapped(_:)), forControlEvents: .TouchUpInside)
         chatButton.addTarget(self, action: #selector(self.chatTapped(_:)), forControlEvents: .TouchUpInside)
 
-        //let tap = UITapGestureRecognizer(target: self, action: Selector("seatTapped"))
-        //tap.numberOfTapsRequired = 1
-        //acceptedButton.addGestureRecognizer(tap)
-        //acceptedButton.userInteractionEnabled = true*/
     }
 
     func seatTapped(sender: UIButton) {
-        //print(self.post)
         if self.post.sender == self.uid! { //cannot accept your own request/offer
             print("in")
             acceptedButton.userInteractionEnabled = false
@@ -54,7 +49,12 @@ class NewsFeedTableCell: UITableViewCell {
         }
     }
     func chatTapped(sender: UIButton){
-        self.post.createChat()
+        if self.post.sender == self.uid! { //cannot chat with yourself
+            chatButton.userInteractionEnabled = false
+        }
+        else {
+            self.post.createChat()
+        }
     }
     
     func createCell(post: Post) {
@@ -72,9 +72,8 @@ class NewsFeedTableCell: UITableViewCell {
             }).resume()
         }
             
-        self.nameText.text = post.name  //this needs to be changed to name
-        //self.postText.text = post.location
-        //self.profileImage.image = UIImage(named: "erin")
+        self.nameText.text = post.name
+
         self.date.text = "on " + post.date
         self.time.text = "at " + post.time
         self.type.text = post.type
@@ -90,9 +89,7 @@ class NewsFeedTableCell: UITableViewCell {
         }
         self.line.backgroundColor = UIColor.lightGrayColor()
         
-        //self.datePosted.text = "23 mins ago"
         backgroundCardView.backgroundColor = UIColor(colorLiteralRed: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
-        //contentView.backgroundColor = UIColor(colorLiteralRed:0.047, green:0.616, blue:0.616, alpha:1.0)
         
         backgroundCardView.layer.cornerRadius = 3.0
         backgroundCardView.layer.masksToBounds = false

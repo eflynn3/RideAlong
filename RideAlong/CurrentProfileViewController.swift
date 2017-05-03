@@ -57,12 +57,6 @@ class CurrentProfileViewController: UIViewController, UITableViewDelegate, UITab
         let uid = FIRAuth.auth()?.currentUser?.uid ?? "nil"
         databaseRef.child("users").child(uid).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
             if let dict = snapshot.value as? [String: AnyObject]{
-                //let first = dict["first-name"]?.uppercaseString
-                //let last = dict["last-name"]?.uppercaseString
-                //self.nameLabel.text! = first! + " " + last!
-                //let classYear = dict["class"]?.uppercaseString
-                //let gender = dict["gender"]?.uppercaseString
-                //self.infoLabel.text! = classYear! + " | " + gender!
                 if let profileImageURL = dict["pic"] as? String{
                     let url = NSURL(string: profileImageURL)
                     NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, response, error) in
@@ -80,7 +74,6 @@ class CurrentProfileViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return 2
         return rides.count
     }
     
@@ -99,7 +92,8 @@ class CurrentProfileViewController: UIViewController, UITableViewDelegate, UITab
     {
         return 150.0;//Your custom row height
     }
-
+    
+    //Get the rides from the database
     private func observeRides() {
         let uid = FIRAuth.auth()?.currentUser!.uid
         let ref = FIRDatabase.database().reference().child("MyRides").child(uid!)
@@ -121,14 +115,5 @@ class CurrentProfileViewController: UIViewController, UITableViewDelegate, UITab
 
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

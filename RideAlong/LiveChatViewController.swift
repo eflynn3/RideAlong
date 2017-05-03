@@ -56,11 +56,7 @@ class LiveChatViewController: JSQMessagesViewController {
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = self.otherName
-        
-        // Create left and right button for navigation item
-        //let leftButton =  UIBarButtonItem(title: "Back", target: self, action: #selector(btn_clicked(_:)))
-        //let leftButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: btn_clicked())
-        //let rightButton = UIBarButtonItem(title: "Right", style: .plain, target: self, action: nil)
+
         var b = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(btn_clicked(_:)))
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = b
@@ -137,7 +133,6 @@ class LiveChatViewController: JSQMessagesViewController {
     private func observeMessages() {
 
         let ref = FIRDatabase.database().reference().child("chats").child(self.chatID)
-        //let messageQuery = ref.queryLimited(toLast:25)
         let q = ref.queryLimitedToLast(25)
         let newMessageRefHandle = q.observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
             let messageData = snapshot.value as! Dictionary<String, String>
@@ -145,7 +140,6 @@ class LiveChatViewController: JSQMessagesViewController {
             if let id = messageData["senderID"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String! where text.characters.count > 0 {
                 self.addMessage(withId: id, name: name, text: text)
                 
-                // 5
                 self.finishReceivingMessage()
             } else {
                 print("Error! Could not decode message data")

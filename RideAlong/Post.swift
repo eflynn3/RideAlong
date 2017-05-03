@@ -59,12 +59,10 @@ class Post {
         return _Key!
     }
     
-    // Initialize the new Joke
     
     init(key: String, dictionary: Dictionary<String, AnyObject>) {
         self._Key = key
         
-        // Within the Joke, or Key, the following properties are children
     
         if let loc = dictionary["location"] as? String {
             self._location = loc
@@ -114,8 +112,7 @@ class Post {
             }
         }
         
-        // Save the new vote total.
-        //print("in")
+
         postRef.child("seats").setValue(_seats)
         let uid = FIRAuth.auth()?.currentUser!.uid
 
@@ -132,6 +129,7 @@ class Post {
         
     }
     
+    //CreateChat in the database for both users and give them a random chatID
     func createChat() {
         let uuid = NSUUID().UUIDString
         let uid = FIRAuth.auth()?.currentUser!.uid

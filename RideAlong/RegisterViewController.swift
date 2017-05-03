@@ -37,8 +37,6 @@ class RegisterViewController: UIViewController {
         let email = self.emailField.text!
         let password = self.passwordField.text!
         let confirmPassword = self.confirmPasswordField.text!
-        //let firstName = self.firstName.text!
-        //let lastName = self.lastName.text!
         
         if (email != "" && password == confirmPassword) {
             FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in if error == nil {
@@ -89,8 +87,6 @@ class RegisterViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
 }

@@ -33,19 +33,13 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
         
     }
-    // MARK: Properties
     
     let databaseRef = FIRDatabase.database().reference()
 
     var senderDisplayName: String? // 1
     
     var newChatTextField: UITextField? // 2
-    
-    //private var chats: [Chat] = [] // 3
-    
-    //var with_user: AnyObject
-    
-    //private lazy var chatRef: FIRDatabaseReference = FIRDatabase.database().reference().child("users")
+
  
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // 2
@@ -87,6 +81,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
 
+    //get chats from database in order to display
     private func observeChats() {
         let uid = FIRAuth.auth()?.currentUser!.uid
         let ref = FIRDatabase.database().reference().child("MyChats").child(uid!)
