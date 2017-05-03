@@ -19,36 +19,41 @@ class NewsFeedTableCell: UITableViewCell {
     @IBOutlet weak var datePosted: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var interestedButton: UIButton!
+    @IBOutlet weak var acceptedButton: UIButton!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var line: UIView!
+    @IBOutlet weak var numSeatsLeft: UILabel!
     
+    var uid = FIRAuth.auth()?.currentUser?.uid
+
     var post: Post!
+    var dataRef = FIRDatabase.database().reference().child("requests")
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        acceptedButton.addTarget(self, action: #selector(self.seatTapped(_:)), forControlEvents: .TouchUpInside)
+        //let tap = UITapGestureRecognizer(target: self, action: Selector("seatTapped"))
+        //tap.numberOfTapsRequired = 1
+        //acceptedButton.addGestureRecognizer(tap)
+        //acceptedButton.userInteractionEnabled = true*/
     }
 
+    func seatTapped(sender: UIButton) {
+        //print(self.post)
+        if self.post.sender == self.uid! { //cannot accept your own request/offer
+            print("in")
+            acceptedButton.userInteractionEnabled = false
+        }
+        else if self.post.seats == "0"{
+            acceptedButton.userInteractionEnabled = false
+        }
+        else {
+            self.post.addSubtractSeat(true, type: self.post.type)
+        }
+    }
     
     func createCell(post: Post) {
-        
-        
-                /*if let profileImageURL = dict["pic"] as? String{
-                    let url = NSURL(string: profileImageURL)
-                    NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, response, error) in
-                        if error != nil {
-                            print(error)
-                            return
-                        }
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self.profilePic?.image = UIImage(data: data!)
-                        }
-                    }).resume()
-                }
-            }
-        })*/
-
+        self.post = post
         if let prof = post.photo as? String {
             let url = NSURL(string: prof)
             NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, response, error) in
@@ -68,7 +73,7 @@ class NewsFeedTableCell: UITableViewCell {
         self.date.text = "on " + post.date
         self.time.text = "at " + post.time
         self.type.text = post.type
-        
+        self.numSeatsLeft.text = String(post.seats)
         if post.type == "REQUEST" {
             self.type.backgroundColor = UIColor(colorLiteralRed:0.047, green:0.616, blue:0.616, alpha:1.0)
             self.postText.text = "I want to go to " + post.location

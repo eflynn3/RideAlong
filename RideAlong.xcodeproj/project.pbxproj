@@ -18,6 +18,8 @@
 		A54B3A8C1EAFEA0800ED47D0 /* CreateChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B3A8B1EAFEA0800ED47D0 /* CreateChatCell.swift */; };
 		A54B3A8E1EAFEA8800ED47D0 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B3A8D1EAFEA8800ED47D0 /* ChatListViewController.swift */; };
 		A54B3A901EAFEAB300ED47D0 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B3A8F1EAFEAB300ED47D0 /* Chat.swift */; };
+		A5505CE41EBA629200EA3897 /* Rides.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5505CE31EBA629200EA3897 /* Rides.swift */; };
+		A5505CE81EBA64CF00EA3897 /* MyRideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5505CE71EBA64CF00EA3897 /* MyRideCell.swift */; };
 		A566F0F91E6BE02900EE4262 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566F0F81E6BE02900EE4262 /* RegisterViewController.swift */; };
 		A566F0FC1E6BE39100EE4262 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */; };
 		A56AE2011EB5A2D800FF33C1 /* RequestRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AE2001EB5A2D800FF33C1 /* RequestRideViewController.swift */; };
@@ -79,6 +81,8 @@
 		A54B3A8B1EAFEA0800ED47D0 /* CreateChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChatCell.swift; sourceTree = "<group>"; };
 		A54B3A8D1EAFEA8800ED47D0 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		A54B3A8F1EAFEAB300ED47D0 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		A5505CE31EBA629200EA3897 /* Rides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rides.swift; sourceTree = "<group>"; };
+		A5505CE71EBA64CF00EA3897 /* MyRideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRideCell.swift; sourceTree = "<group>"; };
 		A566F0F81E6BE02900EE4262 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A566F0FA1E6BE32B00EE4262 /* RideAlong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RideAlong.entitlements; sourceTree = "<group>"; };
 		A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				A503C69E1E4A2C4900EE2E35 /* AppDelegate.swift */,
 				A566F0FB1E6BE39100EE4262 /* LoginPageViewController.swift */,
 				A5C292C41E8B00B80093995D /* Main.storyboard */,
+				A57A1AC01E96EF640030BB07 /* CurrentProfileViewController.swift */,
+				A5505CE71EBA64CF00EA3897 /* MyRideCell.swift */,
 				A594B9691EB126880033423A /* LiveChatViewController.swift */,
 				A54B3A8B1EAFEA0800ED47D0 /* CreateChatCell.swift */,
 				A54B3A8D1EAFEA8800ED47D0 /* ChatListViewController.swift */,
@@ -194,7 +200,6 @@
 				A503C6A71E4A2C4900EE2E35 /* LaunchScreen.storyboard */,
 				A5C292C01E8AF5950093995D /* GoogleService-Info.plist */,
 				A503C6AA1E4A2C4900EE2E35 /* Info.plist */,
-				A57A1AC01E96EF640030BB07 /* CurrentProfileViewController.swift */,
 				A566F0F81E6BE02900EE4262 /* RegisterViewController.swift */,
 				A5C292C21E8AFD1E0093995D /* ProfileViewController.swift */,
 				A56AE2001EB5A2D800FF33C1 /* RequestRideViewController.swift */,
@@ -226,6 +231,7 @@
 			children = (
 				A54B3A8F1EAFEAB300ED47D0 /* Chat.swift */,
 				A56AE2021EB5BD6700FF33C1 /* Post.swift */,
+				A5505CE31EBA629200EA3897 /* Rides.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -401,7 +407,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		642F5EF484CC30BD51424FF7 /* [CP] Embed Pods Frameworks */ = {
@@ -431,7 +437,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A1A03A1E3F662754959C0844 /* [CP] Embed Pods Frameworks */ = {
@@ -506,7 +512,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -521,9 +527,11 @@
 				A594B96A1EB126880033423A /* LiveChatViewController.swift in Sources */,
 				A503C69F1E4A2C4900EE2E35 /* AppDelegate.swift in Sources */,
 				A5B55A841EAD43BC00D658EE /* NewsFeedTableCell.swift in Sources */,
+				A5505CE81EBA64CF00EA3897 /* MyRideCell.swift in Sources */,
 				A56AE2031EB5BD6700FF33C1 /* Post.swift in Sources */,
 				A56AE2011EB5A2D800FF33C1 /* RequestRideViewController.swift in Sources */,
 				A54B3A8E1EAFEA8800ED47D0 /* ChatListViewController.swift in Sources */,
+				A5505CE41EBA629200EA3897 /* Rides.swift in Sources */,
 				A5B4A2341E970B2F003AAD2A /* OfferRideViewController.swift in Sources */,
 				A54B3A901EAFEAB300ED47D0 /* Chat.swift in Sources */,
 				A5C292C31E8AFD1E0093995D /* ProfileViewController.swift in Sources */,

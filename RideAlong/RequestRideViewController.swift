@@ -30,12 +30,6 @@ class RequestRideViewController: UIViewController {
                 let last = dict["last-name"] as! String
                 self.name = first + " " + last
                 self.photo = dict["pic"] as! String
-                //let classYear = dict["class"]?.uppercaseString
-                //let gender = dict["gender"]?.uppercaseString
-                //self.infoLabel.text! = classYear! + " | " + gender!
-                //if let profileImageURL = dict["pic"] as? String{
-                    //self.profilePic = profileImageURL
-                //}
             }
         })
 
@@ -44,7 +38,7 @@ class RequestRideViewController: UIViewController {
     @IBAction func handlePublish(sender: AnyObject) {
         
         var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy, hh:mm"
+        dateFormatter.dateFormat = "MM/dd/yyyy, hh:mm a"
         var strDate = dateFormatter.stringFromDate(self.date.date)
         print(strDate)
         var myStringArr = strDate.componentsSeparatedByString(", ")

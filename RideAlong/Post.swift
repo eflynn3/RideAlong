@@ -21,9 +21,14 @@ class Post {
     private var _Key: String?
     private var _type: String?
     private var _photo: String?
+    private var _sender: String?
     
     var type: String {
         return _type!
+    }
+
+    var sender: String {
+        return _sender!
     }
     
     var photo: String {
@@ -88,22 +93,42 @@ class Post {
         if let p = dictionary["photo"] as? String {
             self._photo = p
         }
+        
+        if let s = dictionary["sender"] as? String {
+            self._sender = s
+        }
         // The above properties are assigned to their key.
         
         self.postRef = FIRDatabase.database().reference().child("requests").child(self._Key!)
     }
     
-    /*func addSubtractVote(addVote: Bool) {
+    func addSubtractSeat(subtractSeat: Bool, type: String) {
         
-        if addVote {
-            _jokeVotes = _jokeVotes + 1
-        } else {
-            _jokeVotes = _jokeVotes - 1
+        if subtractSeat {
+            if type == "REQUEST" {
+                _seats = "0"
+            }
+            else {
+                let temp = Int(_seats!)! - 1
+                _seats = String(temp)
+            }
         }
         
         // Save the new vote total.
+        //print("in")
+        postRef.child("seats").setValue(_seats)
+        let uid = FIRAuth.auth()?.currentUser!.uid
+
+        let itemRef = FIRDatabase.database().reference().child("MyRides").child(uid!).childByAutoId() // 1
+        let messageItem = [ // 2
+            "type": String(_type!),
+            "name" : String(_name!),
+            "date": String(_date!),
+            "time": String(_time!),
+            "location": String(_location!)
+        ]
         
-        _jokeRef.childByAppendingPath("votes").setValue(_jokeVotes)
+        itemRef.setValue(messageItem)
         
-    }*/
+    }
 }

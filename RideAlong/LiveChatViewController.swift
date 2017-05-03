@@ -125,26 +125,14 @@ class LiveChatViewController: JSQMessagesViewController {
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         self.count = 0
-        //self.count = messages.count + 1
         self.itemRef = FIRDatabase.database().reference().child("chats").child("Erin") // 1
-        /*self.itemRef!.observeEventType(.ChildAdded, withBlock: { (snapshot) in
-            print("INNNNN")
-            print(snapshot.children)
-            for child in snapshot.children {
-                print("IN NOW")
-                self.count = self.count + 1
-            }
-            print("count", self.count)
-            //self.count = 0
-        })*/
-        //self.itemRef!.child("1")
+
         let messageItem = [ // 2
             "text": text!,
             "senderID" : self.senderId,
             "senderName": "Me"
         ]
         self.itemRef!.childByAutoId().setValue(messageItem)
-        //self.itemRef!.child(String(self.count)).setValue(messageItem) // 3
         
         JSQSystemSoundPlayer.jsq_playMessageSentSound() // 4
         
@@ -152,9 +140,7 @@ class LiveChatViewController: JSQMessagesViewController {
     }
     
     private func observeMessages() {
-        //messageRef = self.userRef!.child("users").child(self.senderId!).child("chats").child(self.chatUser)
-        // 1.
-        
+
         let ref = FIRDatabase.database().reference().child("chats").child("Erin")
         //let messageQuery = ref.queryLimited(toLast:25)
         let q = ref.queryLimitedToLast(25)
@@ -169,40 +155,8 @@ class LiveChatViewController: JSQMessagesViewController {
             } else {
                 print("Error! Could not decode message data")
             }
-                
-        /*ref.observeSingleEventOfType(.ChildAdded, withBlock: {(snapshot) in
-            if let dict = snapshot.value as? NSDictionary!{
-                if let text = dict["text"] as! String! {
-                    print("IN**********")
-                    print(text)
-                    let id = self.senderId
-                    let name = "Erin"
-                    self.addMessage(withId: id, name: name, text: text)
-                    self.finishReceivingMessage()
-                } else {
-                    print("Error! Could not decode message data")
-                }
-
-            }})
-        //self.finishReceivingMessage()*/
 
         })}
     
-
-
-    
-    
-    /*override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        //let cell = super.collectionView.dequeueReusableCellWithReuseIdentifier(reus, forIndexPath: indexPath) as! JSQMessagesCollectionViewCell
-        let cell = super.collectionView.dequeueReusableCellWithReuseIdentifier("reuseID", forIndexPath: indexPath) as! JSQMessagesCollectionView
-        let message = messages[indexPath.item]
-        
-        if message.senderId == senderId {
-            cell.textView?.textColor = UIColor.whiteColor()
-        } else {
-            cell.textView?.textColor = UIColor.blackColor()
-        }
-        return cell
-    }*/
     
 }

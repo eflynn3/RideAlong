@@ -9,11 +9,14 @@
 import UIKit
 import Firebase
 
-class CurrentProfileViewController: UIViewController {
+class CurrentProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     let databaseRef = FIRDatabase.database().reference()
     let storageRef = FIRStorage.storage().reference()
     
+    var rides = [Rides]()
+
     @IBAction func newsFeed(sender: AnyObject) {
         self.performSegueWithIdentifier("goToNewsFeed", sender: nil)
     }
@@ -26,6 +29,7 @@ class CurrentProfileViewController: UIViewController {
         super.viewDidLoad()
 
         setUpProfile()
+        observeRides()
         // Do any additional setup after loading the view.
     }
 
@@ -53,12 +57,12 @@ class CurrentProfileViewController: UIViewController {
         let uid = FIRAuth.auth()?.currentUser?.uid ?? "nil"
         databaseRef.child("users").child(uid).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
             if let dict = snapshot.value as? [String: AnyObject]{
-                let first = dict["first-name"]?.uppercaseString
-                let last = dict["last-name"]?.uppercaseString
-                self.nameLabel.text! = first! + " " + last!
-                let classYear = dict["class"]?.uppercaseString
-                let gender = dict["gender"]?.uppercaseString
-                self.infoLabel.text! = classYear! + " | " + gender!
+                //let first = dict["first-name"]?.uppercaseString
+                //let last = dict["last-name"]?.uppercaseString
+                //self.nameLabel.text! = first! + " " + last!
+                //let classYear = dict["class"]?.uppercaseString
+                //let gender = dict["gender"]?.uppercaseString
+                //self.infoLabel.text! = classYear! + " | " + gender!
                 if let profileImageURL = dict["pic"] as? String{
                     let url = NSURL(string: profileImageURL)
                     NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {(data, response, error) in
@@ -75,6 +79,47 @@ class CurrentProfileViewController: UIViewController {
         })
     }
 
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //return 2
+        return rides.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        let ride = rides[indexPath.row]
+        
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("RideCell", forIndexPath: indexPath) as! MyRideCell
+        
+        cell.createCell(ride)
+        return cell
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 150.0;//Your custom row height
+    }
+
+    private func observeRides() {
+        let uid = FIRAuth.auth()?.currentUser!.uid
+        let ref = FIRDatabase.database().reference().child("MyRides").child(uid!)
+        
+        ref.observeEventType(.Value, withBlock: {(snapshot) in
+            self.rides = []
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                for snap in snapshots {
+                    if let dict = snap.value as? [String: AnyObject]{
+                        let key = snap.key
+                        
+                        let ride = Rides(key: key, dictionary: dict)
+                        self.rides.insert(ride, atIndex: 0)
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        })
+
+    }
 
     /*
     // MARK: - Navigation
