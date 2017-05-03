@@ -21,36 +21,30 @@ class LiveChatViewController: JSQMessagesViewController {
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     
+    var chatID: String!
+    
     private var newMessageRefHandle: FIRDatabaseHandle?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavBar()
-        self.topContentAdditionalInset = 50
-        observeMessages()
-
         self.senderDisplayName = ""
         self.senderId = FIRAuth.auth()?.currentUser?.uid
         self.userRef = FIRDatabase.database().reference()
+        self.topContentAdditionalInset = 50
+        observeMessages()
+        
+
 
         self.messRef = self.userRef!.child("users").child(self.senderId!).child("chats")
         
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
-        //observeMessages()
-        
-        /*// messages from someone else
-        addMessage(withId: "foo", name: "Mr.Bolt", text: "I am so fast!")
-        // messages sent from local sender
-        addMessage(withId: senderId, name: "Me", text: "I bet I can run faster than you!")
-        addMessage(withId: senderId, name: "Me", text: "I like to run!")
-        // animates the receiving of a new message on the view
-        finishReceivingMessage()*/
-        // Load the sample data.
-    }
+        }
     
+
     func addNavBar() {
         let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width + 40, height:50)) // Offset by 20 pixels vertically to take the status bar into account
         
@@ -126,7 +120,7 @@ class LiveChatViewController: JSQMessagesViewController {
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         self.count = 0
-        self.itemRef = FIRDatabase.database().reference().child("chats").child("Erin") // 1
+        self.itemRef = FIRDatabase.database().reference().child("chats").child(self.chatID) // 1
 
         let messageItem = [ // 2
             "text": text!,
@@ -142,7 +136,7 @@ class LiveChatViewController: JSQMessagesViewController {
     
     private func observeMessages() {
 
-        let ref = FIRDatabase.database().reference().child("chats").child("Erin")
+        let ref = FIRDatabase.database().reference().child("chats").child(self.chatID)
         //let messageQuery = ref.queryLimited(toLast:25)
         let q = ref.queryLimitedToLast(25)
         let newMessageRefHandle = q.observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in

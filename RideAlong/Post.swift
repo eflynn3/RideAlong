@@ -133,12 +133,32 @@ class Post {
     }
     
     func createChat() {
+        let uuid = NSUUID().UUIDString
         let uid = FIRAuth.auth()?.currentUser!.uid
         let itemRef = FIRDatabase.database().reference().child("MyChats").child(uid!).childByAutoId()
         let item = [
             "name" : String(_name!),
-            "otherID" : String(_sender!)
+            "otherID" : String(_sender!),
+            "chatID" : uuid
             ]
         itemRef.setValue(item)
+        
+        FIRDatabase.database().reference().child("users").child(uid!).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject]{
+                let first = dict["first-name"] as? String!
+                let last = dict["last-name"] as? String!
+                let OtherName = first! + " " + last!
+                let itemRef2 = FIRDatabase.database().reference().child("MyChats").child(self._sender!).childByAutoId()
+                let item2 = [
+                    "name" : String(OtherName),
+                    "otherID" : String(uid!),
+                    "chatID" : uuid
+                ]
+                itemRef2.setValue(item2)
+            }
+
+        })
+        
+
     }
 }

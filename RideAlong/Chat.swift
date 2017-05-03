@@ -15,8 +15,13 @@ class Chat {
     
     private var _name: String?
     private var _otherID: String?
+    private var _chatID: String?
     private var _Key: String?
     
+    
+    var chatID: String {
+        return _chatID!
+    }
     
     var name: String {
         return _name!
@@ -43,6 +48,10 @@ class Chat {
         
         if let n = dictionary["name"] as? String {
             self._name = n
+        }
+        
+        if let c = dictionary["chatID"] as? String {
+            self._chatID = c
         }
         
         // The above properties are assigned to their key.

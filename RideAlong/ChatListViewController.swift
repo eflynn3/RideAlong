@@ -19,6 +19,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
     
     var chatID: String!
     var chatName: String!
+    var otherID: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         observeChats()
@@ -55,8 +56,9 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selection = indexPath.row
-        self.chatID = chats[selection].otherID
+        self.otherID = chats[selection].otherID
         self.chatName = chats[selection].name
+        self.chatID = chats[selection].chatID
         self.performSegueWithIdentifier("toSpecificChat", sender: nil)
     }
     
@@ -65,6 +67,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
             let destViewController = segue.destinationViewController as! LiveChatViewController
             destViewController.chatUser = self.chatID
             destViewController.otherName = self.chatName
+            destViewController.chatID = self.chatID 
         }
     }
     
