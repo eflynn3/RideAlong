@@ -50,12 +50,12 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         // Load the sample data.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toChat" {
             let destViewController = segue.destinationViewController as! LiveChatViewController
             destViewController.chatUser = "F0TddlmdRgW98r9NGp5ahceZ2qO2" //turley id
         }
-    }
+    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

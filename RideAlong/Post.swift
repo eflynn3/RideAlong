@@ -135,7 +135,7 @@ class Post {
     func createChat() {
         let uuid = NSUUID().UUIDString
         let uid = FIRAuth.auth()?.currentUser!.uid
-        let itemRef = FIRDatabase.database().reference().child("MyChats").child(uid!).childByAutoId()
+        let itemRef = FIRDatabase.database().reference().child("MyChats").child(uid!).child(self._sender!)
         let item = [
             "name" : String(_name!),
             "otherID" : String(_sender!),
@@ -148,7 +148,7 @@ class Post {
                 let first = dict["first-name"] as? String!
                 let last = dict["last-name"] as? String!
                 let OtherName = first! + " " + last!
-                let itemRef2 = FIRDatabase.database().reference().child("MyChats").child(self._sender!).childByAutoId()
+                let itemRef2 = FIRDatabase.database().reference().child("MyChats").child(self._sender!).child(uid!)
                 let item2 = [
                     "name" : String(OtherName),
                     "otherID" : String(uid!),

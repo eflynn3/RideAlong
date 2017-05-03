@@ -502,9 +502,6 @@
                                                             <state key="normal" title="Chat">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
-                                                            <connections>
-                                                                <segue destination="1C7-OJ-tkd" kind="modal" identifier="toProfile" id="Wq7-bC-98s"/>
-                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l4U-AL-8Pp">
                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="33"/>
@@ -595,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6Z-wV-axq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-341.5" y="187.5"/>
+            <point key="canvasLocation" x="-485.5" y="116.5"/>
         </scene>
         <!--CreateProfile-->
         <scene sceneID="v60-Np-JMv">
@@ -869,8 +866,7 @@
         <image name="seat" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UXh-aD-t2r"/>
-        <segue reference="OYf-ew-sUt"/>
+        <segue reference="m0W-7y-gzg"/>
         <segue reference="fta-gS-Rmj"/>
         <segue reference="0l6-av-m3F"/>
     </inferredMetricsTieBreakers>
