@@ -32,6 +32,8 @@ class NewsFeedTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         acceptedButton.addTarget(self, action: #selector(self.seatTapped(_:)), forControlEvents: .TouchUpInside)
+        chatButton.addTarget(self, action: #selector(self.chatTapped(_:)), forControlEvents: .TouchUpInside)
+
         //let tap = UITapGestureRecognizer(target: self, action: Selector("seatTapped"))
         //tap.numberOfTapsRequired = 1
         //acceptedButton.addGestureRecognizer(tap)
@@ -50,6 +52,9 @@ class NewsFeedTableCell: UITableViewCell {
         else {
             self.post.addSubtractSeat(true, type: self.post.type)
         }
+    }
+    func chatTapped(sender: UIButton){
+        self.post.createChat()
     }
     
     func createCell(post: Post) {

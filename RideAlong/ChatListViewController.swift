@@ -12,11 +12,16 @@ import Firebase
 
 class ChatListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var userRef = FIRDatabase.database().reference()
+    @IBOutlet weak var tableView: UITableView!
     
+    var userRef = FIRDatabase.database().reference()
+    var chats = [Chat]()
+    
+    var chatID: String!
+    var chatName: String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        observeChats()
         // Do any additional setup after loading the view.
         
     }
@@ -35,7 +40,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
     
     var newChatTextField: UITextField? // 2
     
-    private var chats: [Chat] = [] // 3
+    //private var chats: [Chat] = [] // 3
     
     //var with_user: AnyObject
     
@@ -44,22 +49,22 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // 2
         
-       return 2
+       return chats.count
         
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selection = indexPath.row
-        if selection == 1 {
-            //self.observeChannels()
-            self.performSegueWithIdentifier("toSpecificChat", sender: nil)
-        }
+        self.chatID = chats[selection].otherID
+        self.chatName = chats[selection].name
+        self.performSegueWithIdentifier("toSpecificChat", sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toSpecificChat" {
             let destViewController = segue.destinationViewController as! LiveChatViewController
-            destViewController.chatUser = "F0TddlmdRgW98r9NGp5ahceZ2qO2" //turley id
+            destViewController.chatUser = self.chatID
+            destViewController.otherName = self.chatName
         }
     }
     
@@ -71,18 +76,33 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        let chat = chats[indexPath.row]
+
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell", forIndexPath: indexPath) as! CreateChatCell
         
-        cell.toChatName.text = "Erin Turley"
-        cell.toChatProfileImage.image = UIImage(named: "erin")
-        cell.toChatProfileImage.layer.cornerRadius = cell.toChatProfileImage.frame.size.width/2.2
-        cell.toChatProfileImage.clipsToBounds = true
-        
+        cell.createCell(chat)
         return cell
-        
     }
 
-
+    private func observeChats() {
+        let uid = FIRAuth.auth()?.currentUser!.uid
+        let ref = FIRDatabase.database().reference().child("MyChats").child(uid!)
+        
+        ref.observeEventType(.Value, withBlock: {(snapshot) in
+            self.chats = []
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                for snap in snapshots {
+                    if let dict = snap.value as? [String: AnyObject]{
+                        let key = snap.key
+                        
+                        let chat = Chat(key: key, dictionary: dict)
+                        self.chats.insert(chat, atIndex: 0)
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        })
+        
+    }
     
 }

@@ -131,4 +131,14 @@ class Post {
         itemRef.setValue(messageItem)
         
     }
+    
+    func createChat() {
+        let uid = FIRAuth.auth()?.currentUser!.uid
+        let itemRef = FIRDatabase.database().reference().child("MyChats").child(uid!).childByAutoId()
+        let item = [
+            "name" : String(_name!),
+            "otherID" : String(_sender!)
+            ]
+        itemRef.setValue(item)
+    }
 }

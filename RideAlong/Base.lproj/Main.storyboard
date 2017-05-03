@@ -827,6 +827,7 @@
                     <navigationItem key="navigationItem" id="VcF-J8-ZBA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="tableView" destination="9X4-4z-Ysb" id="Gjn-pd-8uS"/>
                         <segue destination="1C7-OJ-tkd" kind="modal" identifier="toSpecificChat" id="OYf-ew-sUt"/>
                     </connections>
                 </viewController>
@@ -868,9 +869,9 @@
         <image name="seat" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m0W-7y-gzg"/>
-        <segue reference="fta-gS-Rmj"/>
+        <segue reference="UXh-aD-t2r"/>
         <segue reference="OYf-ew-sUt"/>
+        <segue reference="fta-gS-Rmj"/>
         <segue reference="0l6-av-m3F"/>
     </inferredMetricsTieBreakers>
 </document>

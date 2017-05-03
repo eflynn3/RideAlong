@@ -14,6 +14,7 @@ class LiveChatViewController: JSQMessagesViewController {
     var userRef: FIRDatabaseReference?
     var messRef: FIRDatabaseReference?
     var itemRef: FIRDatabaseReference?
+    var otherName: String!
     var chatUser: String!
     var count: Int!
     var messages = [JSQMessage]()
@@ -29,7 +30,7 @@ class LiveChatViewController: JSQMessagesViewController {
         self.topContentAdditionalInset = 50
         observeMessages()
 
-        self.senderDisplayName = "Erin"
+        self.senderDisplayName = ""
         self.senderId = FIRAuth.auth()?.currentUser?.uid
         self.userRef = FIRDatabase.database().reference()
 
@@ -60,7 +61,7 @@ class LiveChatViewController: JSQMessagesViewController {
         
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
-        navigationItem.title = "Erin Turley"
+        navigationItem.title = self.otherName
         
         // Create left and right button for navigation item
         //let leftButton =  UIBarButtonItem(title: "Back", target: self, action: #selector(btn_clicked(_:)))
